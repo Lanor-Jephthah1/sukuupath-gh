@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup as firebaseSignInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
@@ -11,8 +11,22 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || ""
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
+const hasFirebaseConfig = Boolean(
+  firebaseConfig.apiKey &&
+  firebaseConfig.authDomain &&
+  firebaseConfig.projectId &&
+  firebaseConfig.appId
+);
 
-export { auth, googleProvider, signInWithPopup };
+const app = hasFirebaseConfig ? initializeApp(firebaseConfig) : null;
+const auth = app ? getAuth(app) : null;
+const googleProvider = app ? new GoogleAuthProvider() : null;
+
+async function signInWithPopup(authInstance, provider) {
+  if (!authInstance || !provider) {
+    throw new Error("Google sign-in is not configured for this deployment.");
+  }
+  return firebaseSignInWithPopup(authInstance, provider);
+}
+
+export { auth, googleProvider, hasFirebaseConfig, signInWithPopup };

@@ -19,6 +19,7 @@ const SettingsScreen = () => {
     const [userId, setUserId] = useState('');
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [memberSince, setMemberSince] = useState('');
 
     useEffect(() => {
         const stored = localStorage.getItem('userAccount');
@@ -29,6 +30,13 @@ const SettingsScreen = () => {
             setSecondaryEmail(acc.secondary_email || '');
             setUserId(acc.id || '');
             if(acc.photo_base64) setPhotoBase64(acc.photo_base64);
+            const joinedAt = acc.created_at || acc.createdAt || acc.joined_at || acc.joinedAt;
+            if (joinedAt) {
+                const parsed = new Date(joinedAt);
+                if (!Number.isNaN(parsed.getTime())) {
+                    setMemberSince(parsed.toLocaleDateString(undefined, { year: 'numeric', month: 'long' }));
+                }
+            }
         }
         const savedLang = localStorage.getItem('user_language');
         if (savedLang) setPreferredLanguage(savedLang);
@@ -150,7 +158,9 @@ const SettingsScreen = () => {
                                         <p className="text-[15px] text-[#434653] dark:text-slate-400 font-medium">{userEmail}</p>
                                     </>
                                 )}
-                                <p className="text-xs text-[#737784] dark:text-slate-500 italic mt-2">Member since August 2023</p>
+                                {memberSince && (
+                                    <p className="text-xs text-[#737784] dark:text-slate-500 italic mt-2">Member since {memberSince}</p>
+                                )}
                             </div>
                         </div>
 

@@ -9,9 +9,6 @@ import shutil
 import httpx
 import os
 import io
-import fitz # PyMuPDF
-import docx
-from pptx import Presentation
 from pathlib import Path
 from datetime import datetime
 import unicodedata
@@ -547,14 +544,17 @@ async def ai_extract(file: UploadFile = File(...)):
         contents = await file.read()
         filename = file.filename.lower()
         if filename.endswith(".pdf"):
+            import fitz  # PyMuPDF
             pdf = fitz.open(stream=contents, filetype="pdf")
             for page in pdf:
                 text += page.get_text() + "\n"
             pdf.close()
         elif filename.endswith(".docx") or filename.endswith(".doc"):
+            import docx
             doc = docx.Document(io.BytesIO(contents))
             text = "\n".join([p.text for p in doc.paragraphs])
         elif filename.endswith(".pptx") or filename.endswith(".ppt"):
+            from pptx import Presentation
             ppt = Presentation(io.BytesIO(contents))
             for slide in ppt.slides:
                 for shape in slide.shapes:

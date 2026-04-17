@@ -44,8 +44,11 @@ app.add_middleware(
 )
 
 # Ensure uploads directory exists
-UPLOAD_DIR = BASE_DIR / "uploads"
-UPLOAD_DIR.mkdir(exist_ok=True)
+if os.getenv("VERCEL"):
+    UPLOAD_DIR = Path("/tmp/uploads")
+else:
+    UPLOAD_DIR = BASE_DIR / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # Mount static files for material downloads/preview
 app.mount("/uploads", StaticFiles(directory=str(UPLOAD_DIR)), name="uploads")

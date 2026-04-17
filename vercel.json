@@ -24,7 +24,7 @@
       "dest": "/frontend/assets/$1"
     },
     {
-      "src": "/(favicon\\.svg|icons\\.svg|signup_students\\.png|signin_students\\.png|edubridge-og\\.jpg)",
+      "src": "/(favicon\\.svg|icons\\.svg|signup_students\\.png|signin_students\\.png|edubridge-og\\.jpg|sukuupath-og\\.jpg)",
       "dest": "/frontend/$1"
     },
     {

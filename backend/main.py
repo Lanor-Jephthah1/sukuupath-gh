@@ -14,6 +14,7 @@ import docx
 from pptx import Presentation
 from pathlib import Path
 from datetime import datetime
+import unicodedata
 from dotenv import load_dotenv
 
 import models
@@ -196,6 +197,33 @@ def compute_confidence(text: str) -> str:
     return "high"
 
 
+def repair_mojibake(text: str) -> str:
+    """Repair common UTF-8 mojibake sequences before returning user-facing text."""
+    if not isinstance(text, str):
+        return text
+
+    normalized = unicodedata.normalize("NFC", text).strip()
+    suspicious_markers = ("Ã", "Â", "Ð", "Ñ", "É")
+    has_c1_controls = any("\u0080" <= ch <= "\u009f" for ch in normalized)
+    if not has_c1_controls and not any(marker in normalized for marker in suspicious_markers):
+        return normalized
+
+    candidates = [normalized]
+    for encoding in ("latin-1", "cp1252"):
+        try:
+            candidates.append(normalized.encode(encoding).decode("utf-8"))
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            continue
+
+    def score(candidate: str) -> tuple[int, int]:
+        bad_controls = sum(1 for ch in candidate if "\u0080" <= ch <= "\u009f")
+        replacement_chars = candidate.count("\ufffd")
+        suspicious_chars = sum(candidate.count(marker) for marker in suspicious_markers)
+        return (bad_controls + replacement_chars + suspicious_chars, -len(candidate))
+
+    return unicodedata.normalize("NFC", min(candidates, key=score)).strip()
+
+
 def normalize_language_name(language: str) -> str:
     return language.strip().lower().replace("_", " ").replace("-", " ")
 
@@ -281,7 +309,7 @@ async def call_huggingface_translation(req: schemas.TranslationRequest):
             detail="Hosted translation model returned an unexpected response format."
         )
 
-    return {"translated_text": translated_text.strip(), "confidence": "Hosted model"}
+    return {"translated_text": repair_mojibake(translated_text), "confidence": "Hosted model"}
 
 
 @app.post("/api/ai/translate")
@@ -322,7 +350,11 @@ async def ai_translate(req: schemas.TranslationRequest):
                     translated_text = resp.json()
                 except:
                     pass
-                return {"translated_text": translated_text, "confidence": "high", "confidence_pct": "99.9"}
+                return {
+                    "translated_text": repair_mojibake(translated_text),
+                    "confidence": "high",
+                    "confidence_pct": "99.9"
+                }
             else:
                 print(f"Khaya API HTTP Error {resp.status_code}: {resp.text}")
     except Exception as e:
@@ -339,7 +371,11 @@ async def ai_translate(req: schemas.TranslationRequest):
     confidence_val = compute_confidence(content)
     if req.target_lang.lower() not in ["english"] and confidence_val == "high":
         confidence_val = "moderate"
-    return {"translated_text": content, "confidence": confidence_val, "confidence_pct": "85.0"}
+    return {
+        "translated_text": repair_mojibake(content),
+        "confidence": confidence_val,
+        "confidence_pct": "85.0"
+    }
 
 
 @app.post("/api/ai/chat")

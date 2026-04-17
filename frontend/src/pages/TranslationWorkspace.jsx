@@ -23,6 +23,13 @@ const TranslationWorkspace = () => {
   const [followUpAnswer, setFollowUpAnswer] = useState('');
   const followUpRef = useRef(null);
 
+  const normalizeConfidenceValue = (value) => {
+    if (value == null) return '0';
+    const raw = String(value).trim();
+    const numeric = Number.parseFloat(raw.replace('%', ''));
+    return Number.isFinite(numeric) ? String(numeric) : raw.replace('%', '');
+  };
+
   const handleTranslate = async () => {
     if (!sourceText.trim()) return;
     setIsTranslating(true);
@@ -37,7 +44,7 @@ const TranslationWorkspace = () => {
       if (response.ok) {
         const data = await response.json();
         setTranslatedText(data.translated_text);
-        setConfidence(data.confidence_pct || data.confidence || '0');
+        setConfidence(normalizeConfidenceValue(data.confidence_pct || data.confidence || '0'));
         setConfidenceLabel(data.confidence || 'high');
       } else {
         setTranslatedText('Error connecting to Neural GH-V2 processor.');

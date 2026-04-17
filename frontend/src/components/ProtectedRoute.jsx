@@ -2,7 +2,12 @@ import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 const ProtectedRoute = () => {
-  const account = localStorage.getItem('userAccount');
+  let account = null;
+  try {
+    account = window.localStorage.getItem('userAccount');
+  } catch {
+    account = null;
+  }
   
   if (!account) {
     // User not logged in, redirect to login page

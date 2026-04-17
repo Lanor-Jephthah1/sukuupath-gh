@@ -306,31 +306,6 @@ npm run dev
 
 ---
 
-## Conference Presentation Notes
-
-SukuuPath GH can be presented as a practical AI-in-education platform with a strong localization angle.
-
-### Key Talking Points
-
-- The product addresses accessibility in higher education by lowering both language and complexity barriers.
-- The architecture deliberately combines specialized translation infrastructure with flexible LLM workflows.
-- Khaya API integration gives the system a concrete Ghanaian NLP backbone.
-- The platform is not only student-facing; it also includes lecturer and audit workflows.
-- Responsible AI is built into the product through user feedback capture and audit visibility.
-- The deployed system demonstrates a real public application, not just a notebook prototype.
-
-### Strong Demo Sequence
-
-1. Open the landing page and onboarding flow.
-2. Show translation from English into Twi or another supported Ghanaian language.
-3. Generate a summary from academic text.
-4. Upload a PDF and show extraction-powered interaction.
-5. Generate a quiz from study material.
-6. Show library persistence and recent activity.
-7. Close with lecturer uploads or feedback/audit to highlight depth beyond a single feature.
-
----
-
 ## Authors
 
 Built by **Jephthah Lanor** and **Nicholas Baffoe**.

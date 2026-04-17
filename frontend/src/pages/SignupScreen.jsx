@@ -95,11 +95,14 @@ const SignupScreen = () => {
           // Check if this is the 404 redirect signal from backend (New User)
           if (response.status === 404 && errData.detail && errData.detail.is_new_user) {
              const newGoogleData = errData.detail.googleData;
+             const generatedPassword = `SukuuPath!${Math.random().toString(36).slice(-8)}`;
              setFormData(prev => ({
                ...prev,
                firstName: newGoogleData.first_name || '',
                lastName: newGoogleData.last_name || '',
-               email: newGoogleData.email || ''
+               email: newGoogleData.email || '',
+               password: generatedPassword,
+               confirmPassword: generatedPassword
              }));
              // Optionally auto-generate a random secure password for them so they don't have to type one
              return;
@@ -283,6 +286,12 @@ const SignupScreen = () => {
             </header>
             
             <form className="space-y-4" onSubmit={handleSubmit}>
+              {errors.general && (
+                <div className="bg-error-container/30 border border-error/50 text-error px-4 py-3 rounded-xl text-sm font-bold flex items-start gap-2 animate-fade-in">
+                  <span className="material-symbols-outlined text-[20px]">error</span>
+                  <span>{errors.general}</span>
+                </div>
+              )}
               {/* Full Name Grid Container */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <div className="space-y-1">
@@ -384,7 +393,7 @@ const SignupScreen = () => {
 
             <div className="flex items-center gap-4 py-6">
               <div className="flex-1 h-px bg-outline-variant opacity-30"></div>
-              <span className="text-[10px] font-black text-outline uppercase tracking-widest">Or join with</span>
+              <span className="text-[10px] font-black text-outline uppercase tracking-widest">OR</span>
               <div className="flex-1 h-px bg-outline-variant opacity-30"></div>
             </div>
 

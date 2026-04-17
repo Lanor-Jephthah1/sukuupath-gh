@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const APP_NAME = "KasaLearn";
+const APP_NAME = "SukuuPath";
 
 const OnboardingScreens = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -46,8 +46,8 @@ const OnboardingScreens = () => {
         
         {/* Top Bar */}
         <div className="absolute top-0 left-0 w-full z-10 px-6 py-6 flex justify-between items-center bg-transparent">
-          <div className="flex items-center gap-2 animate-fade-in-up">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-lg">K</div>
+            <div className="flex items-center gap-2 animate-fade-in-up">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-lg">S</div>
             <span className="font-headline font-extrabold text-xl tracking-tighter text-primary">{APP_NAME}</span>
           </div>
           {currentStep < 3 && (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const APP_NAME = "KasaLearn";
+const APP_NAME = "SukuuPath";
 
 const SUGGESTED_INTERESTS = [
   "Sociology", "Political Science", "Business", "Biology", 
@@ -41,7 +41,7 @@ const ProfileSetupScreen = () => {
       <header className="docked w-full top-0 sticky z-50 glass-nav shadow-sm transition-all duration-300" style={{ background: 'rgba(252, 249, 248, 0.8)', backdropFilter: 'blur(12px)' }}>
         <div className="flex justify-between items-center w-full px-6 py-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-lg">K</div>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-lg">S</div>
             <div className="text-xl font-black text-blue-900 tracking-tighter font-headline">{APP_NAME}</div>
           </div>
           <div className="flex items-center gap-4">

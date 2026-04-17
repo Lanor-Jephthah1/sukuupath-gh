@@ -122,7 +122,11 @@ export async function syncLibraryFromDb() {
           (i) => i.id === parsed.id || i._db_id === dbItem.id
         );
         if (!alreadyExists) {
-          library[type].unshift({ ...parsed, _db_id: dbItem.id });
+          library[type].unshift({
+            ...parsed,
+            createdAt: parsed.createdAt || dbItem.created_at || new Date().toISOString(),
+            _db_id: dbItem.id,
+          });
         }
       } catch {
         // skip malformed
@@ -165,29 +169,46 @@ export function getDashboardStats() {
 
 export function getRecentActivities() {
   const library = getLibrary();
+  const normalizeCreatedAt = (value) => {
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
+  };
+
+  const formatActivityDate = (value) => {
+    const normalized = normalizeCreatedAt(value);
+    return normalized ? new Date(normalized).toLocaleString() : 'Recently';
+  };
+
   return [
     ...library.summaries.map((item) => ({
       id: item.id,
       title: `Summary created: ${item.title || 'Study notes'}`,
-      sub: new Date(item.createdAt).toLocaleString(),
+      timestamp: normalizeCreatedAt(item.createdAt),
+      sub: formatActivityDate(item.createdAt),
       icon: 'summarize',
       color: 'bg-blue-50 text-primary',
     })),
     ...library.quizzes.map((item) => ({
       id: item.id,
       title: `Quiz generated: ${item.title || 'Practice quiz'}`,
-      sub: new Date(item.createdAt).toLocaleString(),
+      timestamp: normalizeCreatedAt(item.createdAt),
+      sub: formatActivityDate(item.createdAt),
       icon: 'quiz',
       color: 'bg-amber-50 text-secondary',
     })),
     ...library.chats.map((item) => ({
       id: item.id,
       title: `AI chat: ${item.title || 'Conversation'}`,
-      sub: new Date(item.createdAt).toLocaleString(),
+      timestamp: normalizeCreatedAt(item.createdAt),
+      sub: formatActivityDate(item.createdAt),
       icon: 'chat',
       color: 'bg-emerald-50 text-tertiary-container',
     })),
   ]
-    .sort((a, b) => (a.sub < b.sub ? 1 : -1))
+    .sort((a, b) => {
+      const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return timeB - timeA;
+    })
     .slice(0, 8);
 }

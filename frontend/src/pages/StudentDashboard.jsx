@@ -112,11 +112,23 @@ const StudentDashboard = () => {
   };
 
   const timeAgo = (dateStr) => {
-    const diffMins = Math.floor((Date.now() - new Date(dateStr)) / 60000);
+    const parsed = new Date(dateStr);
+    if (Number.isNaN(parsed.getTime())) {
+      return dateStr || 'Recently';
+    }
+    const diffMins = Math.floor((Date.now() - parsed.getTime()) / 60000);
     if (diffMins < 1) return 'Just now';
     if (diffMins < 60) return `${diffMins}m ago`;
     if (diffMins < 1440) return `${Math.floor(diffMins / 60)}h ago`;
-    return new Date(dateStr).toLocaleDateString();
+    return parsed.toLocaleDateString();
+  };
+
+  const formatCreatedDate = (value) => {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return 'Recently';
+    }
+    return parsed.toLocaleDateString();
   };
 
   return (
@@ -247,7 +259,7 @@ const StudentDashboard = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-[13px] font-bold text-[#1b1b1c] dark:text-white group-hover:text-[#00366c] dark:group-hover:text-sky-400 transition-colors truncate">{act.title}</h4>
-                      <p className="text-[11px] font-semibold text-[#434653] dark:text-slate-400 mt-0.5">{timeAgo(act.sub)}</p>
+                      <p className="text-[11px] font-semibold text-[#434653] dark:text-slate-400 mt-0.5">{timeAgo(act.timestamp || act.createdAt || act.sub)}</p>
                     </div>
                   </div>
                 ))}
@@ -270,7 +282,7 @@ const StudentDashboard = () => {
                     <span className="material-symbols-outlined text-[#00366c] dark:text-sky-400" style={{ fontVariationSettings: "'FILL' 1" }}>folder</span>
                   </div>
                   <h4 className="text-[13px] font-bold text-[#1b1b1c] dark:text-white group-hover:text-white truncate" title={item.title}>{item.title}</h4>
-                  <p className="text-[10px] text-[#434653] dark:text-slate-300 group-hover:text-[#9ac0ff] uppercase font-black tracking-widest mt-1">{new Date(item.createdAt).toLocaleDateString()}</p>
+                  <p className="text-[10px] text-[#434653] dark:text-slate-300 group-hover:text-[#9ac0ff] uppercase font-black tracking-widest mt-1">{formatCreatedDate(item.createdAt)}</p>
                 </div>
               ))}
               <div onClick={() => fileInputRef.current?.click()}

@@ -1,0 +1,50 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "ga_english_parallel_text",
+  "dataset_size": 1579483,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Ghana-NLP/GA_ENGLISH_PARALLEL_TEXT@d7267c5942a5d109fbd3098929846c07138ed2e1/Public- GA_70.csv": {
+      "num_bytes": 1498760,
+      "checksum": null
+    }
+  },
+  "download_size": 1498760,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Comments": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 3078243,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1579483,
+      "num_examples": 8155,
+      "dataset_name": "ga_english_parallel_text"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

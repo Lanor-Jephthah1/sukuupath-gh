@@ -1,0 +1,50 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "twi_english_parallel_text",
+  "dataset_size": 1048434,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Ghana-NLP/TWI_ENGLISH_PARALLEL_TEXT@16e733c3853202d517598e1b768f2e32bd5e7c0e/Public - Twi[Twi-En]_70.csv": {
+      "num_bytes": 1011627,
+      "checksum": null
+    }
+  },
+  "download_size": 1011627,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Comments": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 2060061,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1048434,
+      "num_examples": 4322,
+      "dataset_name": "twi_english_parallel_text"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

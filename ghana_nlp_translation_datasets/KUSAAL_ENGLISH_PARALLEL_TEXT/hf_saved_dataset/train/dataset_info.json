@@ -1,0 +1,50 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "kusaal_english_parallel_text",
+  "dataset_size": 835687,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Ghana-NLP/KUSAAL_ENGLISH_PARALLEL_TEXT@b99f7bf8ca4074b8f257f434a79704147be595a0/Public - Kusaal_70.csv": {
+      "num_bytes": 803082,
+      "checksum": null
+    }
+  },
+  "download_size": 803082,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Comments": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1638769,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 835687,
+      "num_examples": 3499,
+      "dataset_name": "kusaal_english_parallel_text"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

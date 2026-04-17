@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload Material - EduBridge GH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#303030",
+              "primary-fixed": "#d5e3ff",
+              "outline-variant": "#c3c6d5",
+              "on-primary-container": "#9ac0ff",
+              "on-tertiary-fixed": "#002110",
+              "on-secondary-fixed": "#261900",
+              "surface-container-low": "#f6f3f2",
+              "surface-container": "#f0eded",
+              "primary": "#00366c",
+              "on-tertiary-fixed-variant": "#00522f",
+              "on-secondary-container": "#6e4f00",
+              "on-background": "#1b1b1c",
+              "tertiary-fixed-dim": "#81d9a2",
+              "on-primary-fixed-variant": "#004689",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e5e2e1",
+              "surface-container-lowest": "#ffffff",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-primary-fixed": "#001b3c",
+              "secondary": "#7b5800",
+              "outline": "#737784",
+              "on-surface": "#1b1b1c",
+              "tertiary-fixed": "#9df5bd",
+              "primary-fixed-dim": "#a8c8ff",
+              "on-tertiary-container": "#79d09a",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-container": "#ffbf2e",
+              "on-surface-variant": "#434653",
+              "inverse-on-surface": "#f3f0ef",
+              "on-secondary-fixed-variant": "#5d4200",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#fbbc2b",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eae7e7",
+              "inverse-primary": "#a8c8ff",
+              "primary-container": "#004d95",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-tint": "#175ead",
+              "surface-bright": "#fcf9f8",
+              "surface": "#fcf9f8",
+              "tertiary": "#003f23",
+              "tertiary-container": "#005934",
+              "secondary-fixed": "#ffdea5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="bg-[#fcf9f8]/80 dark:bg-[#1b1b1c]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0px_12px_32px_rgba(27,27,28,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface cursor-pointer" data-icon="menu">menu</span>
+<span class="font-['Manrope'] font-extrabold tracking-tight text-xl text-[#00366c] dark:text-[#4d95ff]">EduBridge GH</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#434653] dark:text-[#c3c6d5] hover:text-[#00366c] transition-colors font-medium" href="#">Dashboard</a>
+<a class="text-[#00366c] dark:text-[#4d95ff] font-bold border-b-2 border-[#ffbf2e]" href="#">Uploads</a>
+<a class="text-[#434653] dark:text-[#c3c6d5] hover:text-[#00366c] transition-colors font-medium" href="#">Courses</a>
+<a class="text-[#434653] dark:text-[#c3c6d5] hover:text-[#00366c] transition-colors font-medium" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<!-- Side Navigation (Web) -->
+<aside class="fixed left-0 top-0 h-full w-64 hidden md:flex flex-col bg-[#f0eded] dark:bg-[#1b1b1c] pt-20 z-40">
+<div class="px-6 mb-8">
+<h2 class="font-headline font-bold text-lg text-[#00366c]">Academic Portal</h2>
+<p class="text-xs text-on-surface-variant">Lecturer Account</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="mx-2 px-4 py-3 text-[#434653] flex items-center gap-3 hover:bg-[#e0dddd] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-sm font-medium">Dashboard</span>
+</div>
+<div class="bg-[#ffbf2e] text-[#1b1b1c] rounded-lg font-bold mx-2 px-4 py-3 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="upload_file">upload_file</span>
+<span class="font-['Manrope'] text-sm font-medium">Uploads</span>
+</div>
+<div class="mx-2 px-4 py-3 text-[#434653] flex items-center gap-3 hover:bg-[#e0dddd] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-['Manrope'] text-sm font-medium">Courses</span>
+</div>
+<div class="mx-2 px-4 py-3 text-[#434653] flex items-center gap-3 hover:bg-[#e0dddd] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Manrope'] text-sm font-medium">Settings</span>
+</div>
+</nav>
+<div class="p-4 space-y-1">
+<div class="mx-2 px-4 py-3 text-[#434653] flex items-center gap-3 hover:bg-[#e0dddd] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Manrope'] text-sm font-medium">Help</span>
+</div>
+<div class="mx-2 px-4 py-3 text-[#434653] flex items-center gap-3 hover:bg-[#e0dddd] rounded-lg transition-all cursor-pointer text-error">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Manrope'] text-sm font-medium">Logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pb-24 md:pb-8 pt-6 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-10">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">Upload Academic Material</h1>
+<p class="text-on-surface-variant max-w-2xl">Contribute to the EduBridge knowledge base. Upload lecture notes, assignments, or research papers in high-quality formats.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Upload Area & Form (Left 2/3) -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Dropzone -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(27,27,28,0.04)] border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer">
+<div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-2">Drag and drop files here</h3>
+<p class="text-on-surface-variant text-sm mb-6">Or click to browse your local storage</p>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span> PDF
+                        </span>
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="article">article</span> DOCX
+                        </span>
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="text_snippet">text_snippet</span> TXT
+                        </span>
+</div>
+</section>
+<!-- Metadata Form -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(27,27,28,0.04)]">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="edit_note">edit_note</span>
+                        Document Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Material Title</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary/20 placeholder:text-outline" placeholder="e.g. Advanced Macroeconomics Lecture Notes" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Subject / Department</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Economics &amp; Statistics</option>
+<option>Computer Science</option>
+<option>Business Administration</option>
+<option>Political Science</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Course Code</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary/20" placeholder="e.g. ECON402" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Description (Optional)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary/20" placeholder="Briefly describe the contents of this document..." rows="4"></textarea>
+</div>
+</div>
+</section>
+</div>
+<!-- Upload Progress & Status (Right 1/3) -->
+<div class="space-y-6">
+<!-- Current Uploads -->
+<section class="bg-surface-container rounded-xl p-6">
+<h3 class="font-headline font-bold text-lg mb-4">Active Uploads</h3>
+<div class="space-y-4">
+<!-- Upload Item 1 (Progress) -->
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<div class="flex items-start gap-3 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Macro_Lec_04.pdf</p>
+<p class="text-xs text-on-surface-variant">4.2 MB • 65% complete</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer text-sm" data-icon="close">close</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+</div>
+<!-- Upload Item 2 (Completed) -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border-l-4 border-tertiary-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="article">article</span>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Assignment_Brief_v2.docx</p>
+<p class="text-xs text-tertiary font-medium">Ready to process</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insight Preview (The Scholarly Curator) -->
+<section class="bg-tertiary-container/10 border border-tertiary-container/20 rounded-xl p-6 overflow-hidden relative">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-tertiary">AI Summary Prep</span>
+</div>
+<h4 class="font-headline font-bold text-on-tertiary-fixed-variant mb-2 text-sm">Automatic Indexing</h4>
+<p class="text-xs text-on-tertiary-fixed-variant/80 leading-relaxed mb-4">Our AI is preparing to extract keywords and generate a summary for these documents once processed.</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary-fixed" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary">Enhanced Search Enabled</span>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-8 -bottom-8 w-24 h-24 bg-tertiary-fixed/20 rounded-full blur-2xl"></div>
+</section>
+<!-- Action Buttons -->
+<div class="pt-4 space-y-3">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 rounded-lg shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+                        Process Now
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-high text-on-surface font-bold py-4 rounded-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+                        Cancel Upload
+                    </button>
+</div>
+</div>
+</div>
+<!-- History/List Section (Recent Uploads) -->
+<section class="mt-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline font-bold text-2xl tracking-tight">Recent Academic Uploads</h2>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                    View Library
+                    <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Content Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(27,27,28,0.02)] border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-secondary-container/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="library_books">library_books</span>
+</div>
+<h4 class="font-bold text-sm mb-1 truncate">Modern Ghana History</h4>
+<p class="text-xs text-on-surface-variant mb-4">Uploaded 2 hours ago</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] bg-surface-container px-2 py-0.5 rounded font-bold uppercase text-outline">HIS101</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Content Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(27,27,28,0.02)] border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+</div>
+<h4 class="font-bold text-sm mb-1 truncate">Calculus III Seminar</h4>
+<p class="text-xs text-on-surface-variant mb-4">Uploaded Yesterday</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] bg-surface-container px-2 py-0.5 rounded font-bold uppercase text-outline">MATH302</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Content Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(27,27,28,0.02)] border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-tertiary-container/10 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="data_exploration">data_exploration</span>
+</div>
+<h4 class="font-bold text-sm mb-1 truncate">Stats Data Sets</h4>
+<p class="text-xs text-on-surface-variant mb-4">Uploaded 3 days ago</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] bg-surface-container px-2 py-0.5 rounded font-bold uppercase text-outline">STAT205</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Content Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(27,27,28,0.02)] border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-error-container/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error" data-icon="description">description</span>
+</div>
+<h4 class="font-bold text-sm mb-1 truncate">Draft Thesis Paper</h4>
+<p class="text-xs text-on-surface-variant mb-4">Uploaded 1 week ago</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] bg-surface-container px-2 py-0.5 rounded font-bold uppercase text-outline">RES500</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#fcf9f8] dark:bg-[#1b1b1c] md:hidden rounded-t-2xl shadow-[0_-4px_16px_rgba(0,0,0,0.04)] border-t border-[#c3c6d5]/20">
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] tap-highlight-none transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#ffbf2e] text-[#1b1b1c] rounded-xl px-4 py-1 tap-highlight-none transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Upload</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] tap-highlight-none transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] tap-highlight-none transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

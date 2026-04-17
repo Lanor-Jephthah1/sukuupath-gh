@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBridge GH - Assignment Prompt Interpreter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00366c",
+              "on-tertiary-fixed-variant": "#00522f",
+              "surface-container": "#f0eded",
+              "surface-container-low": "#f6f3f2",
+              "tertiary-fixed-dim": "#81d9a2",
+              "on-secondary-container": "#6e4f00",
+              "on-background": "#1b1b1c",
+              "primary-fixed": "#d5e3ff",
+              "inverse-surface": "#303030",
+              "on-tertiary-fixed": "#002110",
+              "on-secondary-fixed": "#261900",
+              "outline-variant": "#c3c6d5",
+              "on-primary-container": "#9ac0ff",
+              "tertiary-fixed": "#9df5bd",
+              "surface-dim": "#dcd9d9",
+              "surface-variant": "#e5e2e1",
+              "surface-container-lowest": "#ffffff",
+              "background": "#fcf9f8",
+              "on-primary-fixed-variant": "#004689",
+              "on-error-container": "#93000a",
+              "secondary": "#7b5800",
+              "outline": "#737784",
+              "on-surface": "#1b1b1c",
+              "on-primary-fixed": "#001b3c",
+              "on-secondary-fixed-variant": "#5d4200",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-container": "#ffbf2e",
+              "on-surface-variant": "#434653",
+              "surface-container-high": "#eae7e7",
+              "secondary-fixed-dim": "#fbbc2b",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#79d09a",
+              "primary-fixed-dim": "#a8c8ff",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#ffdea5",
+              "tertiary-container": "#005934",
+              "tertiary": "#003f23",
+              "primary-container": "#004d95",
+              "inverse-primary": "#a8c8ff",
+              "surface-tint": "#175ead",
+              "surface-bright": "#fcf9f8",
+              "surface": "#fcf9f8",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #00366c 0%, #004d95 100%);
+        }
+        .glass-nav {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full glass-nav shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-extrabold text-blue-900 font-headline tracking-tight">EduBridge GH</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 font-medium hover:text-blue-700 transition-colors" href="#">Home</a>
+<a class="text-slate-500 font-medium hover:text-blue-700 transition-colors" href="#">Vocabulary</a>
+<a class="text-blue-900 font-bold border-b-2 border-blue-900 transition-colors" href="#">Assignments</a>
+<a class="text-slate-500 font-medium hover:text-blue-700 transition-colors" href="#">Summaries</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+</button>
+<button class="p-2 text-primary hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen pt-16 pb-24 md:pb-0">
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-64 p-4 gap-2 sticky top-16 bg-slate-50 border-r-0">
+<div class="px-4 py-6">
+<h2 class="text-lg font-bold text-blue-900 font-headline">EduBridge GH</h2>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mt-1">Academic Excellence</p>
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<a class="text-slate-600 px-4 py-2 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope text-sm">Home</span>
+</a>
+<a class="text-slate-600 px-4 py-2 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="book_2">book_2</span>
+<span class="font-manrope text-sm">Vocabulary</span>
+</a>
+<a class="bg-blue-100 text-blue-900 rounded-lg px-4 py-2 font-semibold transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-manrope text-sm">Assignments</span>
+</a>
+<a class="text-slate-600 px-4 py-2 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-manrope text-sm">Summaries</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-surface-container">
+<a class="text-slate-600 px-4 py-2 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope text-sm">Settings</span>
+</a>
+<a class="text-slate-600 px-4 py-2 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-manrope text-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-6 md:p-12 max-w-6xl mx-auto w-full">
+<!-- Hero Header -->
+<header class="mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label text-[10px] uppercase tracking-widest mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                    AI-Powered Interpreter
+                </div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tight mb-4">
+                    Demystify Your Assignments.
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    Don't let complex academic language hold you back. Paste your prompt below and we'll break it down into manageable steps.
+                </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Input Section (1/3 weight) -->
+<section class="lg:col-span-1 space-y-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+<label class="block text-sm font-label font-bold text-primary mb-3 uppercase tracking-wider">Assignment Prompt</label>
+<textarea class="w-full h-64 bg-surface-container-low border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/40 resize-none font-body" placeholder="Paste the confusing instructions here... e.g., 'Evaluate the socio-economic implications of post-colonial infrastructure...'"></textarea>
+<div class="mt-6 space-y-3">
+<button class="w-full editorial-gradient text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+                                Interpret Prompt
+                            </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="translate">translate</span>
+                                    Translate
+                                </button>
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="save">save</span>
+                                    Save
+                                </button>
+</div>
+</div>
+</div>
+<!-- Decorative/Support Card -->
+<div class="bg-tertiary-container/10 p-6 rounded-xl border border-tertiary-container/20">
+<h4 class="text-tertiary-container font-headline font-bold flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                            Pro Tip
+                        </h4>
+<p class="text-sm text-on-tertiary-fixed-variant leading-relaxed">
+                            Include any word limits or specific grading criteria mentioned in the original instruction for a better structure suggestion.
+                        </p>
+</div>
+</section>
+<!-- Output Area (2/3 weight) - Bento Grid Style -->
+<section class="lg:col-span-2 space-y-6">
+<!-- The Insight Card (Simplified Explanation) -->
+<div class="bg-tertiary-container text-white p-8 rounded-2xl shadow-lg relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-3xl opacity-80" data-icon="auto_stories">auto_stories</span>
+<h3 class="text-xl font-headline font-bold uppercase tracking-wider">The Simple Gist</h3>
+</div>
+<p class="text-xl font-medium leading-relaxed opacity-95">
+                                "Your professor wants you to look at how building new roads and bridges after Ghana became independent actually changed how people earn money and live their daily lives. You need to decide if these changes were mostly good or bad."
+                            </p>
+</div>
+<!-- Background Pattern/Graphic -->
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[120px]" data-icon="school">school</span>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Key Action Words -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-secondary shadow-sm">
+<h4 class="text-secondary font-headline font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
+                                Key Action Words
+                            </h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="search">search</span>
+                                    Evaluate
+                                </span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="compare_arrows">compare_arrows</span>
+                                    Implications
+                                </span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant leading-relaxed">
+<strong>Evaluate:</strong> Means to judge the value or quality of something. Don't just list facts; give your opinion based on evidence.
+                            </p>
+</div>
+<!-- Important Terms -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary shadow-sm">
+<h4 class="text-primary font-headline font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="dictionary">dictionary</span>
+                                Important Terms
+                            </h4>
+<ul class="space-y-3">
+<li class="text-sm">
+<span class="font-bold text-on-surface block">Post-colonial:</span>
+<span class="text-on-surface-variant">The period after Ghana gained independence (after 1957).</span>
+</li>
+<li class="text-sm">
+<span class="font-bold text-on-surface block">Socio-economic:</span>
+<span class="text-on-surface-variant">How social factors (people/culture) and economic factors (money/jobs) work together.</span>
+</li>
+</ul>
+</div>
+<!-- Answer Structure (Full Width inside Grid context) -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<h4 class="text-primary font-headline font-bold text-sm uppercase tracking-widest mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="account_tree">account_tree</span>
+                                Suggested Answer Structure
+                            </h4>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</div>
+<div>
+<h5 class="font-bold text-on-surface">Introduction (10%)</h5>
+<p class="text-sm text-on-surface-variant">Define 'infrastructure' and briefly mention the time period you're discussing.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</div>
+<div>
+<h5 class="font-bold text-on-surface">Economic Impacts (40%)</h5>
+<p class="text-sm text-on-surface-variant">Discuss trade, jobs created by roads/ports, and cost of living changes.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</div>
+<div>
+<h5 class="font-bold text-on-surface">Social Impacts (40%)</h5>
+<p class="text-sm text-on-surface-variant">Discuss urban migration, access to schools/hospitals, and community connection.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">4</div>
+<div>
+<h5 class="font-bold text-on-surface">Conclusion (10%)</h5>
+<p class="text-sm text-on-surface-variant">Summarize if the overall result was positive or negative for Ghana.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Final CTA -->
+<div class="bg-white p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img alt="AI Avatar" class="w-full h-full object-cover" data-alt="professional smiling african academic advisor with glasses and clean business casual attire, studio lighting, friendly approachable expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdEAJpoAoseR9fFpx4Anu2D8Rvj__N1V-XYh6DGBEN7hMlI1gvHrRHnKz-UutRpgqr_tfWB39juknnmP1_mH4i5DhZTA_ONVihzSJIVPdtFxxXzI76rgWCUgS3TgmyUN0XvriaodOkxx-rwLWI6OSYniwUy894Fu7oybdNO4KFlNPviHy_ZYjdAUNoxW54igPMS8r484FJ1h08J0XsPk-JtJA13ZroZVa9SRDr8yPhSgwOrpXbcm1L6JlAb7t3bLzpdM3E7ZCBidJI"/>
+</div>
+<div>
+<h5 class="font-bold text-on-surface">Still have questions?</h5>
+<p class="text-sm text-on-surface-variant">Our AI tutor can explain specific parts of this prompt further.</p>
+</div>
+</div>
+<button class="px-6 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            Ask AI About This Prompt
+                        </button>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full glass-nav flex justify-around items-center px-4 pb-6 pt-3 md:hidden z-50 border-t border-slate-200/20">
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Vocab</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-amber-100 text-blue-900 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Docs</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,13 @@
+.venv
+.venv-train
+stitch
+frontend/node_modules
+frontend/dist
+frontend/build_output.txt
+backend/__pycache__
+backend/.env
+*.env
+backend/edubridge.db
+*.log
+training
+ghana_nlp_translation_datasets

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBridge GH - Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#6e4f00",
+                        "tertiary": "#003f23",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed-dim": "#fbbc2b",
+                        "on-primary-container": "#9ac0ff",
+                        "outline": "#737784",
+                        "background": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#175ead",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#002110",
+                        "on-background": "#1b1b1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#004d95",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#9df5bd",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#261900",
+                        "inverse-surface": "#303030",
+                        "secondary": "#7b5800",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-primary-fixed-variant": "#004689",
+                        "secondary-container": "#ffbf2e",
+                        "primary": "#00366c",
+                        "outline-variant": "#c3c6d5",
+                        "on-surface-variant": "#434653",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "on-tertiary-container": "#79d09a",
+                        "on-primary-fixed": "#001b3c",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-fixed-dim": "#81d9a2",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#a8c8ff",
+                        "on-surface": "#1b1b1c",
+                        "surface-container": "#f0eded",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "tertiary-container": "#005934"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-50 shadow-sm dark:shadow-none">
+<div class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100 font-headline">EduBridge GH</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Study</a>
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">History</a>
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 font-label text-xs uppercase tracking-wider px-3 py-2" href="#">Feedback</a>
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Alerts</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-blue-900 dark:text-blue-400 p-2 hover:bg-slate-100 rounded-full transition-colors">history</button>
+<button class="material-symbols-outlined text-blue-900 dark:text-blue-400 p-2 hover:bg-slate-100 rounded-full transition-colors">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Scholar profile avatar" class="w-full h-full object-cover" data-alt="professional headshot of a young Ghanaian scholar smiling with a warm academic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe5WDgyaiyFlFmzZ0rrk8KG_PUCm7AP7jSoYp6-P1euxwUTsOgfSaosygega-UVK-eBV8teoc6FMyI1pdZxzXhLxYNms6b7XBC6lAtlhFUiWlPB8V2DS4XiEzM6SZdA3ebdK3XTRVkoAGNR1i7yQfbSh0vi5vWr5eaC4Bj3lnv6MdTE_6g6BKhP4XMUh9aLuFYBGCdlJoIhIqIWH-CkkWKTzca9_MIitqEne013Ot1xvNFRXt60vc6xRA7QhyxbcdeKxM1a6FQ_cWT"/>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-5xl mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-4">Improve our AI Tutor</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                Your feedback helps us refine EduBridge GH. If an AI response was inaccurate, inappropriate, or unclear, please let us know so we can adjust the scholarly curator's logic.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Summary of Output -->
+<div class="lg:col-span-2 space-y-8">
+<section class="bg-surface-container-low rounded-2xl p-6 md:p-8">
+<div class="flex items-center gap-2 mb-6 text-primary">
+<span class="material-symbols-outlined">description</span>
+<h2 class="font-headline font-bold text-xl">Reporting Content</h2>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-6 rounded-r-xl shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">Original Query</span>
+<span class="text-xs text-on-surface-variant">Oct 24, 2:15 PM</span>
+</div>
+<p class="font-body italic text-on-surface mb-6">"Explain the historical significance of the Akosombo Dam construction in post-independence Ghana."</p>
+<div class="h-px bg-surface-container mb-6"></div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3 block">AI Response Summary</span>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-4">
+                            The Akosombo Dam, completed in 1965, was a flagship project of Dr. Kwame Nkrumah’s government. It was intended to power the Volta Aluminum Company (VALCO) and provide electricity for industrialization. However, some historical sources suggest... [The report concerns an inaccuracy regarding the displacement of local communities in the Volta basin].
+                        </p>
+</div>
+</section>
+<!-- Reasoning Options (Bento Style) -->
+<section class="space-y-6">
+<h3 class="font-headline font-bold text-xl text-on-surface">What went wrong?</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all group text-left border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">help_center</span>
+</div>
+<div>
+<p class="font-bold text-sm">Unclear</p>
+<p class="text-xs text-on-surface-variant">The explanation was confusing</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all group text-left border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div>
+<p class="font-bold text-sm">Incorrect</p>
+<p class="text-xs text-on-surface-variant">Factual or data errors found</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all group text-left border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="font-bold text-sm">Offensive</p>
+<p class="text-xs text-on-surface-variant">Harmful or biased language</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-secondary-container text-on-secondary-container transition-all group text-left">
+<div class="w-10 h-10 rounded-full bg-on-secondary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<p class="font-bold text-sm">Culturally Inappropriate</p>
+<p class="text-xs opacity-80">Misrepresents Ghanaian heritage</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Textarea -->
+<section class="space-y-4">
+<label class="font-headline font-bold text-xl block" for="comments">Additional Details (Optional)</label>
+<textarea class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-xl p-4 text-on-surface font-body placeholder:text-on-surface-variant/50" id="comments" placeholder="Provide more context to help us understand the issue..." rows="5"></textarea>
+</section>
+<!-- Submit Action -->
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2">
+                        Submit Feedback
+                        <span class="material-symbols-outlined">send</span>
+</button>
+<button class="w-full sm:w-auto px-8 py-4 text-on-surface font-medium hover:bg-surface-container-high transition-colors rounded-xl">
+                        Cancel
+                    </button>
+</div>
+</div>
+<!-- Sidebar Info / Reassurance -->
+<aside class="space-y-6">
+<div class="bg-tertiary-container text-on-tertiary-container p-8 rounded-2xl relative overflow-hidden">
+<!-- Subtle pattern overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10">
+<div class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
+<span class="material-symbols-outlined text-white">shield_with_heart</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-4 text-white">Our Commitment</h4>
+<p class="text-sm leading-relaxed mb-6 opacity-90">
+                            At EduBridge GH, we strive for academic excellence. Every report is reviewed by our curriculum team to ensure the AI remains a reliable and respectful learning partner.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-white text-lg">check_circle</span>
+<p class="text-xs">Human-in-the-loop review process</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-white text-lg">check_circle</span>
+<p class="text-xs">Continuous algorithmic fine-tuning</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl">
+<h4 class="font-label text-xs uppercase tracking-widest font-bold mb-4">Helpful Tip</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        If the content is offensive or dangerous, it will be prioritized for immediate moderation. Thank you for keeping the community safe.
+                    </p>
+</div>
+<img class="w-full h-48 object-cover rounded-2xl" data-alt="a stack of classic leather-bound books next to a modern laptop in a bright library setting, symbolizing the bridge between old and new knowledge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw6aebrvwCi0l2Lj5rXcIfEjOjG0UNsdS1QR4R2iqcYoZjTpklUjfRas9bb9OGRVmm5_IRUgUNI0mvaRzbqOb7FDeRlHuo3tSpglWLj-FDUJshjXSRy7LVbW4upsj3Oo5GAmadaVDQh2x2gN18X479IjmvSgwjJf7zXHgvELqwYa3Sp9vV7Wxcp4DxlI_mz4t61fvL3saDhIyu6GMyeGe9AHSZZCSHn4vZMrPSQUPMcYRdQNkbtMl_aOukgvRzNDTwR5s3rjdK-0BF"/>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 pb-safe h-20 bg-white dark:bg-slate-950 z-50 rounded-t-2xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest mt-1">Study</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest mt-1">History</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-200 rounded-xl px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumbs_up_down</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest mt-1">Feedback</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest mt-1">Alerts</span>
+</button>
+</nav>
+</body></html>

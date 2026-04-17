@@ -1,0 +1,46 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "ewe_english_parallel_text",
+  "dataset_size": 831667,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Ghana-NLP/EWE_ENGLISH_PARALLEL_TEXT@5b0894467a4018205f7c5bb486f7baba39b95589/Public - Ewe_70.csv": {
+      "num_bytes": 810070,
+      "checksum": null
+    }
+  },
+  "download_size": 810070,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1641737,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 831667,
+      "num_examples": 3488,
+      "dataset_name": "ewe_english_parallel_text"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

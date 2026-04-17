@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | EduBridge GH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#fbbc2b",
+              "on-tertiary-container": "#79d09a",
+              "surface-container-low": "#f6f3f2",
+              "surface-variant": "#e5e2e1",
+              "on-surface": "#1b1b1c",
+              "on-secondary-fixed-variant": "#5d4200",
+              "on-tertiary-fixed": "#002110",
+              "on-primary": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#a8c8ff",
+              "surface-dim": "#dcd9d9",
+              "secondary": "#7b5800",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#a8c8ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#00522f",
+              "error-container": "#ffdad6",
+              "outline": "#737784",
+              "inverse-on-surface": "#f3f0ef",
+              "primary": "#00366c",
+              "primary-container": "#004d95",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#c3c6d5",
+              "tertiary-fixed-dim": "#81d9a2",
+              "tertiary-container": "#005934",
+              "surface-container": "#f0eded",
+              "surface-container-high": "#eae7e7",
+              "on-surface-variant": "#434653",
+              "background": "#fcf9f8",
+              "tertiary": "#003f23",
+              "inverse-surface": "#303030",
+              "secondary-fixed": "#ffdea5",
+              "primary-fixed": "#d5e3ff",
+              "surface-tint": "#175ead",
+              "on-primary-fixed-variant": "#004689",
+              "surface-container-highest": "#e5e2e1",
+              "surface": "#fcf9f8",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#9df5bd",
+              "on-background": "#1b1b1c",
+              "secondary-container": "#ffbf2e",
+              "on-secondary-fixed": "#261900",
+              "on-secondary-container": "#6e4f00",
+              "on-primary-fixed": "#001b3c",
+              "on-primary-container": "#9ac0ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0 md:pl-64">
+<!-- Top Navigation Bar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-blue-900 dark:text-blue-100 docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-3 w-full">
+<div class="text-xl font-extrabold text-blue-900 dark:text-blue-50 font-['Manrope'] tracking-tight">
+                EduBridge GH
+            </div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full" data-icon="translate">translate</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a confident Ghanaian female academic with a warm smile in a brightly lit office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-C0vRnyRmQ7bXCaTVvJdAJimjVhd5Run7BSgnEXWCfV9i3tWUR3kKNMJuo96ST1apr0gsTFikCaax1dCOquRfD_8ciAZmxouEn0357B2u0IdWYUD9oSLUsm77P7DB8UUzIdZQF_TNyNDy60W70XC1Or0vzCG4xR3aPCJI91D4YoNdTM8PzgwbV4zoS9qRD7G51e_-hGWKBMyHi9gp67cK7tpTniIxuo54lwkDxWBeLyEK_MyV7t_iy2yCRBLIcTKJQIb-cCFWwUSx"/>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-px w-full"></div>
+</header>
+<!-- Side Navigation Bar (Web) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex-col p-4 gap-2 z-[60]">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<div class="text-lg font-black text-blue-900 dark:text-blue-50 leading-tight">EduBridge GH</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Scholarly Curator</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 font-['Manrope'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 font-['Manrope'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 font-['Manrope'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span> Academic Resources
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 font-bold rounded-lg font-['Manrope'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span> Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 font-['Manrope'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span> Support
+            </a>
+</nav>
+<div class="mt-auto space-y-4">
+<div class="bg-primary-container/10 p-4 rounded-xl">
+<p class="text-xs font-bold text-primary mb-2">Upgrade to Premium</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Unlock advanced scholarly research tools and AI summaries.</p>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-error-container/20 hover:text-error transition-colors font-['Manrope'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Log Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="max-w-4xl mx-auto px-4 py-8 md:py-16 space-y-12">
+<!-- Header Section -->
+<header class="space-y-2">
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight">Settings</h1>
+<p class="text-on-surface-variant max-w-xl">Configure your scholarly environment and manage your academic profile across the EduBridge ecosystem.</p>
+</header>
+<!-- Account Settings Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-8">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="person">person</span> Account Settings
+                    </h2>
+<button class="text-sm font-bold text-primary hover:underline">Edit Profile</button>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young African woman with short natural hair wearing glasses and a professional white shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD62zA1x2pO2KqdRLhwytwCGEW6U3qfn6wJdUKtiA631mUyL7LNjejbmDwbgI2DeYVHvQbhMVMdKQwhB1dN76AF1XAHIrrz6ejski_NZlzjfM9JKTwVgBHhrO7nupVGOJZkB6gZMBtQthO7A46HZbTmAjb6uKzrkefg13DSuYi-IVJ2mwYaiP8-aiQ8krJZGzTnXF9N6_TLlADl_YdvaUR_9hp-h-AezonC4FWNQbWLSt2rM6R5mnUQAuNE8n2NqrtqXaHNI-5U70_b"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg scale-90 hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="text-lg font-bold text-on-surface">Akosua Mansa</p>
+<p class="text-sm text-on-surface-variant">akosua.mansa@ug.edu.gh</p>
+<p class="text-xs text-on-surface-variant italic">Member since August 2023</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">Password</label>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<span class="text-sm font-mono">••••••••••••</span>
+<button class="material-symbols-outlined text-primary" data-icon="edit">edit</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">Secondary Email</label>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<span class="text-sm">a.mansa@outlook.com</span>
+<button class="material-symbols-outlined text-primary" data-icon="add">add</button>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insight Card - Specialized Component -->
+<div class="bg-tertiary-container text-on-tertiary-container p-8 rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-bold text-white">AI Suggestion</h3>
+</div>
+<p class="text-sm text-white/90 leading-relaxed">You've accessed resources in 3 different Ghanaian languages this week. Consider enabling "Smart Translation" in Accessibility.</p>
+</div>
+<button class="relative z-10 mt-6 w-full py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-lg text-white text-sm font-bold transition-colors">
+                    Review Suggestion
+                </button>
+</div>
+</section>
+<!-- Preferences Section (Language & Theme) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Language Chips -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<h2 class="text-xl font-bold text-on-surface">Preferred Language</h2>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-secondary-container text-on-secondary-container shadow-sm">English</button>
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors">Twi</button>
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors">Ewe</button>
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors">Ga</button>
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors">Fante</button>
+</div>
+<p class="text-xs text-on-surface-variant">This language will be used for AI summaries and platform navigation.</p>
+</div>
+<!-- Theme Preference -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<h2 class="text-xl font-bold text-on-surface">Theme Preference</h2>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl bg-white border-2 border-primary shadow-md">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="light_mode" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+<span class="text-sm font-bold text-on-surface">Light Mode</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl bg-slate-900 border-2 border-transparent">
+<span class="material-symbols-outlined text-3xl text-slate-400" data-icon="dark_mode">dark_mode</span>
+<span class="text-sm font-bold text-white">Dark Mode</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Grouped Controls (Notifications, Privacy, Accessibility) -->
+<section class="space-y-6">
+<h2 class="text-xl font-bold text-on-surface px-2">System Controls</h2>
+<div class="space-y-1">
+<!-- Row: Notifications -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-t-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Notification Settings</p>
+<p class="text-sm text-on-surface-variant">Push, email, and scholarly alerts</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Row: Privacy -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Privacy Controls</p>
+<p class="text-sm text-on-surface-variant">Manage data visibility and history</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Row: Accessibility -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-b-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Accessibility</p>
+<p class="text-sm text-on-surface-variant">Screen reader and high contrast modes</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full">3 active</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Logout Action -->
+<footer class="pt-12 flex flex-col items-center">
+<button class="w-full md:w-auto px-12 py-4 bg-error text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Log Out of EduBridge GH
+            </button>
+<p class="mt-6 text-[10px] uppercase tracking-[0.2em] font-black text-on-surface-variant/40">Version 2.4.0-Scholarly</p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-['Inter'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span> Home
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-['Inter'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bar_chart">bar_chart</span> Analytics
+        </a>
+<a class="flex flex-col items-center justify-center bg-yellow-400/20 text-yellow-800 dark:text-yellow-400 rounded-xl px-4 py-1 font-['Inter'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span> Settings
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-['Inter'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span> Profile
+        </a>
+</nav>
+</body></html>

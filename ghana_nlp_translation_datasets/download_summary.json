@@ -1,0 +1,97 @@
+{
+  "Ghana-NLP/ENGLISH_TWI_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\ENGLISH_TWI_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 6090,
+        "columns": [
+          "id",
+          "text",
+          "label",
+          "Unnamed: 3"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\ENGLISH_TWI_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  },
+  "Ghana-NLP/KUSAAL_ENGLISH_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\KUSAAL_ENGLISH_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 3499,
+        "columns": [
+          "id",
+          "text",
+          "label",
+          "Comments"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\KUSAAL_ENGLISH_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  },
+  "Ghana-NLP/FANTE_ENGLISH_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\FANTE_ENGLISH_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 3500,
+        "columns": [
+          "id",
+          "text",
+          "label",
+          "Unnamed: 3"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\FANTE_ENGLISH_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  },
+  "Ghana-NLP/GA_ENGLISH_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\GA_ENGLISH_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 8155,
+        "columns": [
+          "id",
+          "text",
+          "label",
+          "Comments"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\GA_ENGLISH_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  },
+  "Ghana-NLP/EWE_ENGLISH_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\EWE_ENGLISH_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 3488,
+        "columns": [
+          "id",
+          "text",
+          "label"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\EWE_ENGLISH_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  },
+  "Ghana-NLP/TWI_ENGLISH_PARALLEL_TEXT": {
+    "status": "ok",
+    "saved_to": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\TWI_ENGLISH_PARALLEL_TEXT",
+    "splits": {
+      "train": {
+        "rows": 4322,
+        "columns": [
+          "id",
+          "text",
+          "label",
+          "Comments"
+        ],
+        "csv_path": "C:\\Users\\McLanor Jeff\\Desktop\\academic\\ghana_nlp_translation_datasets\\TWI_ENGLISH_PARALLEL_TEXT\\train.csv"
+      }
+    }
+  }
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBridge GH - Study Notes &amp; Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#6e4f00",
+                        "tertiary": "#003f23",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed-dim": "#fbbc2b",
+                        "on-primary-container": "#9ac0ff",
+                        "outline": "#737784",
+                        "background": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#175ead",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#002110",
+                        "on-background": "#1b1b1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#004d95",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#9df5bd",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#261900",
+                        "inverse-surface": "#303030",
+                        "secondary": "#7b5800",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-primary-fixed-variant": "#004689",
+                        "secondary-container": "#ffbf2e",
+                        "primary": "#00366c",
+                        "outline-variant": "#c3c6d5",
+                        "on-surface-variant": "#434653",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "on-tertiary-container": "#79d09a",
+                        "on-primary-fixed": "#001b3c",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-fixed-dim": "#81d9a2",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#a8c8ff",
+                        "on-surface": "#1b1b1c",
+                        "surface-container": "#f0eded",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "tertiary-container": "#005934"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none z-50">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100">EduBridge GH</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 py-1 font-semibold transition-colors" href="#">Study</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1 rounded transition-colors" href="#">History</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1 rounded transition-colors" href="#">Feedback</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1 rounded transition-colors" href="#">Alerts</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-blue-900">history</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-blue-900">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed-dim">
+<img alt="Scholar profile avatar" data-alt="portrait of a confident young Ghanaian scholar with a warm smile, soft natural lighting in an academic library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR0Mmkjyu-pI17wfauP1-tqxjnZYwp2Ln4CxS7ZyTlH-3pP4QhEQPX09Zqdaluydxeow2rfY8A7iJ2kCIrDP5OqVVLHkAAW9xu-kTjB7Ettbz5X_nOX_HAn0dcFA3ki3GQlqDIeFGmmPmhiTVR7g3nsuKQtZYRqgyA4nDLX1MaXh8EbRfQ7_qYBYs8vCzTX-44_S0Kd1dDqAq6TXDbHxCfEvlqsRAWLnwEv3ejc6X96NCR3kX_g0cOAmvk0zIAbZZjMBTf_fFsePbr"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4">Scholarly Workspace</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg">Your curated space for academic excellence. Refine your understanding with AI-enhanced notes and interactive flashcards.</p>
+</section>
+<!-- Tab Switcher & Global Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+<div class="inline-flex p-1.5 bg-surface-container-low rounded-xl">
+<button class="px-8 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-bold transition-all">Notes</button>
+<button class="px-8 py-2.5 rounded-lg text-on-surface-variant font-medium hover:text-on-surface transition-all">Flashcards</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-xl font-semibold shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02]">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Create New</span>
+</button>
+<button class="p-2.5 bg-surface-container text-on-surface rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">quiz</span>
+</button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<div class="flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold tracking-wide">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>Filters:</span>
+</div>
+<select class="bg-surface-container-lowest border-none rounded-full px-5 py-2 text-sm font-medium focus:ring-2 focus:ring-primary shadow-sm cursor-pointer">
+<option>All Subjects</option>
+<option>History of Ghana</option>
+<option>Mathematics</option>
+<option>Economics</option>
+</select>
+<select class="bg-surface-container-lowest border-none rounded-full px-5 py-2 text-sm font-medium focus:ring-2 focus:ring-primary shadow-sm cursor-pointer">
+<option>All Languages</option>
+<option>English</option>
+<option>Twi</option>
+<option>Ga</option>
+</select>
+<select class="bg-surface-container-lowest border-none rounded-full px-5 py-2 text-sm font-medium focus:ring-2 focus:ring-primary shadow-sm cursor-pointer">
+<option>Most Recent</option>
+<option>Oldest First</option>
+<option>Alphabetical</option>
+</select>
+<div class="ml-auto hidden lg:flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="text-xs font-label uppercase tracking-widest">32 Active Modules</span>
+</div>
+</div>
+<!-- Content Area: Bento Grid for Notes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Note Card: Primary Feature -->
+<article class="lg:col-span-2 group relative bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/10">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Academic background" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="a close-up of an old leather-bound journal and a modern tablet on a wooden desk, symbolizing the bridge between traditional and digital learning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDANWfwCgH7UUV1srXQ_1wRfndZKBn1t00uyw6BAkhHtUJCLno9n-2l8gPpmw0FiJWSbq4WkFpQX-k2D56w7OMjUR7FnGdxc-kkv9MvSY5xj5ZLPjxb9P_F7y8jBaVG6EgqZ2yUZwv_8-1g57v1IFS2EFIHygeXE0ZYZoi0xdMbl28Ne8h6prrVtFCFiuKktfgKXs3dlPkH64VAL-buisxFGNcxH89TCAF19EvxX2BEsNiEp5oiKdWbb6wz8yH-ozeazF2O5MQmU9sY"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold rounded-full uppercase tracking-tighter">History</span>
+<div class="flex gap-2">
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">ios_share</span></button>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-3">Ghana's Independence: The Role of the Big Six</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">A comprehensive summary of the 1948 riots and the subsequent path to 1957 independence. Key figures analyzed through the lens of political strategy.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary-container flex items-center justify-center text-[10px] font-bold">AI</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">EN</div>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                            View Full Analysis
+                            <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- AI Insight Card -->
+<article class="bg-tertiary-container rounded-2xl p-8 text-on-tertiary flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-xs font-label uppercase tracking-widest font-bold">AI Generated Summary</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Quick Recap: Economic Policies 2024</h3>
+<ul class="space-y-4 text-sm opacity-90">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                            Focus on digitizing local markets to increase revenue.
+                        </li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                            Shift towards sustainable energy exports by Q4.
+                        </li>
+</ul>
+</div>
+<button class="mt-8 py-3 w-full bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl font-bold transition-all border border-white/20">
+                    Quiz me on this
+                </button>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</article>
+<!-- Smaller Note Cards -->
+<article class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 flex flex-col hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded uppercase">Mathematics</span>
+<span class="text-[10px] font-label text-on-surface-variant">2 days ago</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Calculus: Limits and Continuity</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Deep dive into epsilon-delta definitions and visual representations of infinite series.</p>
+<div class="mt-auto pt-4 border-t border-surface-container flex justify-between items-center">
+<span class="text-xs font-semibold text-primary">12 Flashcards</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">bookmark</button>
+</div>
+</article>
+<article class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 flex flex-col hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded uppercase">Literature</span>
+<span class="text-[10px] font-label text-on-surface-variant">Just now</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Analysis: The Beautyful Ones Are Not Yet Born</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Thematic breakdown of Ayi Kwei Armah's masterpiece and post-colonial critiques.</p>
+<div class="mt-auto pt-4 border-t border-surface-container flex justify-between items-center">
+<span class="text-xs font-semibold text-primary">8 Flashcards</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 1;">bookmark</button>
+</div>
+</article>
+<!-- Flashcard Deck Selector -->
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-2xl text-white shadow-xl flex flex-col justify-between">
+<div>
+<h4 class="text-xl font-bold mb-2">Practice Session</h4>
+<p class="text-xs text-on-primary-container leading-relaxed">Boost your retention with spaced repetition. High success rate for current modules.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-3xl font-black">84%</span>
+<span class="text-[10px] font-label uppercase">Last score</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform">
+                        Start Now
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 pb-safe h-20 bg-white dark:bg-slate-950 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-200 rounded-xl px-4 py-1 Active: scale-90 transition-transform">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest">Study</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700 dark:hover:text-blue-300">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700 dark:hover:text-blue-300">
+<span class="material-symbols-outlined">thumbs_up_down</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest">Feedback</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-700 dark:hover:text-blue-300">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-bold Inter uppercase tracking-widest">Alerts</span>
+</div>
+</nav>
+<!-- FAB (Contextual) -->
+<button class="fixed bottom-24 md:bottom-12 right-6 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+</button>
+</body></html>

@@ -1,0 +1,50 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "fante_english_parallel_text",
+  "dataset_size": 855106,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Ghana-NLP/FANTE_ENGLISH_PARALLEL_TEXT@55f086a80ae2895118ac377baca739571a488cc0/Public - Fante_70.csv": {
+      "num_bytes": 819197,
+      "checksum": null
+    }
+  },
+  "download_size": 819197,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Unnamed: 3": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1674303,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 855106,
+      "num_examples": 3500,
+      "dataset_name": "fante_english_parallel_text"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz: Ghana Heritage &amp; Governance - EduBridge GH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#7b5800",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#a8c8ff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-container": "#79d09a",
+                        "secondary-fixed-dim": "#fbbc2b",
+                        "on-surface": "#1b1b1c",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed": "#002110",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#175ead",
+                        "on-primary-fixed-variant": "#004689",
+                        "surface": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-container": "#6e4f00",
+                        "on-primary-fixed": "#001b3c",
+                        "on-primary-container": "#9ac0ff",
+                        "secondary-container": "#ffbf2e",
+                        "on-secondary-fixed": "#261900",
+                        "tertiary-fixed": "#9df5bd",
+                        "on-background": "#1b1b1c",
+                        "primary-container": "#004d95",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00366c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline": "#737784",
+                        "surface-container": "#f0eded",
+                        "tertiary-fixed-dim": "#81d9a2",
+                        "tertiary-container": "#005934",
+                        "outline-variant": "#c3c6d5",
+                        "on-surface-variant": "#434653",
+                        "background": "#fcf9f8",
+                        "surface-container-high": "#eae7e7",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary-fixed": "#ffdea5",
+                        "tertiary": "#003f23",
+                        "inverse-surface": "#303030"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #00366c 0%, #004d95 100%);
+        }
+        .glass-nav {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-50 glass-nav shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-extrabold text-blue-900 dark:text-blue-100 font-headline tracking-tight">EduBridge GH</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-manrope font-bold text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">Library</a>
+<a class="font-manrope font-bold text-lg tracking-tight text-blue-900 dark:text-blue-400 border-b-2 border-amber-500 transition-colors" href="#">Courses</a>
+<a class="font-manrope font-bold text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- Language Toggle Section -->
+<div class="hidden sm:flex items-center gap-2 p-1 bg-surface-container rounded-full">
+<button class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold uppercase tracking-wider">English</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant font-label text-xs font-bold uppercase tracking-wider hover:bg-surface-container-high transition-all">Twi</button>
+</div>
+<button class="p-2 text-on-surface-variant hover:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-start py-8 px-4 md:px-8 max-w-5xl mx-auto w-full">
+<!-- Quiz Header & Progress -->
+<div class="w-full mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="font-label text-xs font-bold uppercase tracking-[0.1em] text-secondary">Unit 4: Constitutional History</span>
+<h1 class="font-headline text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight leading-tight">The Path to Independence (1957)</h1>
+</div>
+<!-- Timer Card -->
+<div class="bg-surface-container-lowest shadow-[0px_12px_32px_rgba(27,27,28,0.06)] rounded-xl px-6 py-3 flex items-center gap-4 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+<div>
+<p class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Time Remaining</p>
+<p class="font-headline font-bold text-xl text-primary tabular-nums">14:52</p>
+</div>
+</div>
+</div>
+<!-- Progress Bar Tracker -->
+<div class="mt-10">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label text-xs font-bold text-on-surface-variant">Question <span class="text-primary">08</span> of 20</span>
+<span class="font-label text-xs font-bold text-on-surface-variant">40% Complete</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-gradient w-[40%] rounded-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+<!-- Question Section (Asymmetric Layout) -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Question Sidebar/Support -->
+<div class="lg:col-span-4 order-2 lg:order-1 space-y-6">
+<!-- Specialized AI Component: Insight Card -->
+<div class="bg-tertiary-container rounded-xl p-6 text-on-tertiary relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="psychology">psychology</span>
+<span class="font-headline font-bold text-sm tracking-tight">AI Study Tip</span>
+</div>
+<p class="text-sm font-body leading-relaxed opacity-90">
+                            Think about the role of the <span class="font-bold">U.G.C.C.</span> versus the <span class="font-bold">C.P.P.</span> in this specific era of the timeline. The "Big Six" were central figures here.
+                        </p>
+</div>
+<!-- Decorative Glass Glow -->
+<div class="absolute -bottom-8 -right-8 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Reference Image Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Historic Moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="historic black and white photo of Kwame Nkrumah declaring independence at Old Polo Grounds in Accra dramatic low angle high contrast authentic vintage grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2443ik4JbYKAWXZZ8NI6YPSSMnv91C38wT30_YF2dAFr0InsFEIgKDnSDe211_VNXQKNVt0VxGatKueXG1BMXAANUcWrWLNjgfZBzG_jkirYfIttM8Hbm_51NY4p9GmoyLMJh8mW8Y5Nj1OMww_dUYstHjAJ7eA1m4IyjGbXuNZU24g-WoBBXS-GNVxZrqN0vsmGEzAuPneqWIVeV9WIFuIk3VI4IRT26ahe_kT2tGQV7bNq9kReBZZ3EH05ODwGvLTT_S5Q3Hcs"/>
+</div>
+<div class="p-4">
+<p class="font-label text-[10px] font-bold uppercase text-on-surface-variant">Visual Context</p>
+<p class="text-xs italic text-on-surface-variant mt-1 leading-snug">Independence Declaration, Old Polo Grounds, Accra, March 6, 1957.</p>
+</div>
+</div>
+</div>
+<!-- Main Question Card -->
+<div class="lg:col-span-8 order-1 lg:order-2">
+<div class="bg-surface-container-lowest rounded-2xl p-8 md:p-12 shadow-[0px_12px_32px_rgba(27,27,28,0.06)] border border-outline-variant/10">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-on-surface mb-10 leading-relaxed">
+                        Who was the leader of the Convention People's Party (CPP) during the final push for Ghanaian independence?
+                    </h2>
+<!-- Answer Options -->
+<div class="space-y-4">
+<!-- Option: Default -->
+<button class="w-full flex items-center p-5 rounded-xl bg-surface-container-low border border-transparent hover:bg-surface-container transition-all group text-left">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-lowest text-on-surface-variant font-headline font-extrabold group-hover:bg-primary group-hover:text-white transition-colors mr-5">A</span>
+<span class="font-body font-medium text-on-surface">Dr. J.B. Danquah</span>
+</button>
+<!-- Option: Selected -->
+<button class="w-full flex items-center p-5 rounded-xl bg-primary/5 border-2 border-primary transition-all text-left shadow-sm">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-headline font-extrabold mr-5">B</span>
+<span class="font-body font-bold text-primary">Dr. Kwame Nkrumah</span>
+<span class="material-symbols-outlined ml-auto text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option: Default -->
+<button class="w-full flex items-center p-5 rounded-xl bg-surface-container-low border border-transparent hover:bg-surface-container transition-all group text-left">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-lowest text-on-surface-variant font-headline font-extrabold group-hover:bg-primary group-hover:text-white transition-colors mr-5">C</span>
+<span class="font-body font-medium text-on-surface">Edward Akufo-Addo</span>
+</button>
+<!-- Option: Default -->
+<button class="w-full flex items-center p-5 rounded-xl bg-surface-container-low border border-transparent hover:bg-surface-container transition-all group text-left">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-lowest text-on-surface-variant font-headline font-extrabold group-hover:bg-primary group-hover:text-white transition-colors mr-5">D</span>
+<span class="font-body font-medium text-on-surface">Emanuel Obetsebi-Lamptey</span>
+</button>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex flex-col sm:flex-row items-center justify-between mt-10 gap-4">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold hover:bg-surface-dim transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                            Previous
+                        </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-gradient text-white font-headline font-bold hover:opacity-90 transition-all active:scale-95">
+                            Next
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<button class="w-full sm:w-auto px-10 py-4 rounded-xl border-2 border-primary text-primary font-headline font-extrabold hover:bg-primary hover:text-white transition-all active:scale-95">
+                        Submit Quiz
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component - Mobile Only) -->
+<footer class="md:hidden">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe pt-2 bg-white dark:bg-slate-900 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] border-t border-slate-100 dark:border-slate-800 z-50">
+<a class="flex flex-col items-center justify-center bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-200 rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider mt-1">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider mt-1">Quizzes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider mt-1">AI Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider mt-1">Profile</span>
+</a>
+</div>
+</footer>
+<!-- Spacer for Bottom Nav -->
+<div class="h-20 md:hidden"></div>
+</body></html>

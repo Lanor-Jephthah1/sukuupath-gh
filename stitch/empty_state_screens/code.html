@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBridge GH | Academic Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#303030",
+              "primary-fixed": "#d5e3ff",
+              "outline-variant": "#c3c6d5",
+              "on-primary-container": "#9ac0ff",
+              "on-tertiary-fixed": "#002110",
+              "on-secondary-fixed": "#261900",
+              "surface-container-low": "#f6f3f2",
+              "surface-container": "#f0eded",
+              "primary": "#00366c",
+              "on-tertiary-fixed-variant": "#00522f",
+              "on-secondary-container": "#6e4f00",
+              "on-background": "#1b1b1c",
+              "tertiary-fixed-dim": "#81d9a2",
+              "on-primary-fixed-variant": "#004689",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e5e2e1",
+              "surface-container-lowest": "#ffffff",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-primary-fixed": "#001b3c",
+              "secondary": "#7b5800",
+              "outline": "#737784",
+              "on-surface": "#1b1b1c",
+              "tertiary-fixed": "#9df5bd",
+              "primary-fixed-dim": "#a8c8ff",
+              "on-tertiary-container": "#79d09a",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-container": "#ffbf2e",
+              "on-surface-variant": "#434653",
+              "inverse-on-surface": "#f3f0ef",
+              "on-secondary-fixed-variant": "#5d4200",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#fbbc2b",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eae7e7",
+              "inverse-primary": "#a8c8ff",
+              "primary-container": "#004d95",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-tint": "#175ead",
+              "surface-bright": "#fcf9f8",
+              "surface": "#fcf9f8",
+              "tertiary": "#003f23",
+              "tertiary-container": "#005934",
+              "secondary-fixed": "#ffdea5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface flex min-h-screen">
+<!-- Desktop SideNavBar (from JSON) -->
+<aside class="hidden md:flex flex-col py-8 gap-4 h-screen w-64 bg-[#f0eded] dark:bg-[#1b1b1c] fixed left-0 top-0 overflow-y-auto">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-black text-[#00366c] dark:text-[#ffbf2e]">EduBridge GH</h1>
+</div>
+<div class="px-4 flex flex-col gap-2">
+<div class="flex items-center gap-3 p-3 text-[#00366c] dark:text-[#ffbf2e] font-bold border-l-4 border-[#ffbf2e] pl-4 transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">description</span>
+<span class="font-manrope text-sm font-medium">Notes</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">translate</span>
+<span class="font-manrope text-sm font-medium">Translations</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">upload_file</span>
+<span class="font-manrope text-sm font-medium">Materials</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-manrope text-sm font-medium">Quizzes</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-manrope text-sm font-medium">Alerts</span>
+</div>
+</div>
+<div class="mt-auto px-4 flex flex-col gap-2 pt-8">
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-sm font-medium">Settings</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#434653] dark:text-[#c3c6d5] pl-5 hover:bg-[#ffffff] dark:hover:bg-[#434653] rounded-lg">
+<span class="material-symbols-outlined">help</span>
+<span class="font-manrope text-sm font-medium">Support</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen pb-20 md:pb-0">
+<!-- TopAppBar (from JSON) -->
+<header class="bg-[#fcf9f8]/80 dark:bg-[#1b1b1c]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0px_12_32px_rgba(27,27,28,0.06)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-extrabold text-[#00366c] dark:text-[#fcf9f8] tracking-tight font-manrope">Notes</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#f0eded] dark:hover:bg-[#434653] transition-all">
+<span class="material-symbols-outlined text-[#434653] dark:text-[#c3c6d5]">search</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a Ghanaian student with a warm smile in an academic setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7XiKLZrQiwrcdNa1Ec7X3yYQSiY6xJIWn_PLNEihZ1eZM5g_zLEsX2xunWM9jigdAxUJ-qn45AszpG0rsOmTmnnM0chC1WRq5AqoKuq4wnC2BjnZ2f3Pf3O-hyXXmd0GBJaMqyy5AMrSfNq206X7a0um1aH7F2TjOVNoNF44BvvJxqjp9-Y3qtCpgTsVUW6JvZkIjbwZczj85tXDkuzKS_9P3V4ZyZl5WNLeX6UlDVQXCatIawpLA5ve4qlEn8_bY6WaWZAxvM1JI"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="flex-1 flex flex-col items-center justify-center p-6 md:p-12 space-y-16">
+<!-- Primary Empty State: No Saved Notes -->
+<section class="max-w-2xl w-full text-center space-y-8">
+<div class="relative inline-block">
+<div class="absolute inset-0 bg-secondary-container/20 blur-3xl rounded-full"></div>
+<div class="relative w-64 h-64 mx-auto rounded-3xl bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="stylized flat lay of a blank minimalist open notebook with a pen and a small succulent on a textured light beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjhc9v06mqy9V8rRQ7AGlPm7jkTJqKPDSw_bnILNwol3NDCw062WeSGFNsd_1wuyLD7kX-QyLx05U1ICNY7qhoIVy6kV1Vzh4QuVWmP-nWMkLHzkvASz8fBXMtSnZAJSOkK6kR9kHBOqXPvcM51CvyUyVn5s5HT7XnM_Hj9r32LKoy4-uXP019wjRibAoE5F7Rh7RW4WNS2ypuIaJOh_5-DXhE-Rm6U0J_pdIC0O3cyrta2keZyPqXwmcoB7U0MWpN48h_VkeBbmp-"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/30">edit_note</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl md:text-4xl font-bold text-on-surface tracking-tight">Your Knowledge Hub is Waiting</h3>
+<p class="font-body text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                        Capture your thoughts, class insights, and research summaries. Every great achievement starts with a single note.
+                    </p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-headline font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95 inline-flex items-center gap-2">
+<span class="material-symbols-outlined">add_circle</span>
+                    Create Your First Note
+                </button>
+</section>
+<!-- Grid of Other Empty States (Asymmetric Layout) -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Translations -->
+<div class="bg-surface-container-low p-8 rounded-2xl space-y-6 flex flex-col items-center text-center transition-all hover:bg-surface-container-high border border-transparent hover:border-outline-variant/10">
+<div class="w-20 h-20 rounded-full bg-tertiary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-4xl">translate</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-on-surface">No Translations Yet</h4>
+<p class="text-sm text-on-surface-variant">Bridge the language gap. Start translating academic texts into local dialects.</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Translate Now</button>
+</div>
+<!-- Materials -->
+<div class="bg-surface-container-low p-8 rounded-2xl space-y-6 flex flex-col items-center text-center transition-all hover:bg-surface-container-high border border-transparent hover:border-outline-variant/10">
+<div class="w-20 h-20 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-4xl">upload_file</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-on-surface">Silent Library</h4>
+<p class="text-sm text-on-surface-variant">Upload your syllabus or study guides to get AI-powered insights.</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Upload Document</button>
+</div>
+<!-- Quizzes -->
+<div class="bg-surface-container-low p-8 rounded-2xl space-y-6 flex flex-col items-center text-center transition-all hover:bg-surface-container-high border border-transparent hover:border-outline-variant/10">
+<div class="w-20 h-20 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">quiz</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-on-surface">Fresh Start</h4>
+<p class="text-sm text-on-surface-variant">Ready to test your knowledge? Take a quiz to track your progress.</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Start Quiz</button>
+</div>
+<!-- Notifications -->
+<div class="bg-surface-container-low p-8 rounded-2xl space-y-6 flex flex-col items-center text-center transition-all hover:bg-surface-container-high border border-transparent hover:border-outline-variant/10">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">notifications_off</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-on-surface">All Caught Up</h4>
+<p class="text-sm text-on-surface-variant">No new alerts. Enjoy the peace and focus on your studies.</p>
+</div>
+<button class="text-on-surface-variant font-bold text-sm hover:underline">Refresh Feed</button>
+</div>
+</div>
+<!-- AI Insight Card (Specialized Component) -->
+<div class="w-full max-w-4xl bg-tertiary-container text-white p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-3xl -mr-20 -mt-20 rounded-full"></div>
+<div class="flex-shrink-0 relative z-10">
+<div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">auto_awesome</span>
+</div>
+</div>
+<div class="space-y-3 relative z-10 flex-1">
+<h5 class="font-headline text-xl font-bold">Pro-Tip: Use AI Summaries</h5>
+<p class="text-tertiary-fixed leading-relaxed">Students who upload materials and generate summaries see a 35% increase in retention. Start your first session now.</p>
+</div>
+<button class="bg-white text-tertiary-container px-6 py-3 rounded-xl font-bold whitespace-nowrap hover:bg-opacity-90 transition-all z-10">
+                    Get Started
+                </button>
+</div>
+</div>
+</main>
+<!-- Mobile BottomNavBar (from JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fcf9f8]/90 dark:bg-[#1b1b1c]/95 backdrop-blur-md z-50 rounded-t-2xl border-t border-[#c3c6d5]/20 shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center bg-[#ffbf2e] text-[#1b1b1c] rounded-full p-2 h-12 w-12 scale-90 duration-150">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] p-2">
+<span class="material-symbols-outlined">history</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] p-2">
+<span class="material-symbols-outlined">cloud_upload</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Uploads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] p-2">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Results</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#434653] dark:text-[#c3c6d5] p-2">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold mt-1">Inbox</span>
+</div>
+</nav>
+</body></html>

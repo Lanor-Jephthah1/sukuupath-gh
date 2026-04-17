@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBridge GH - Profile Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#005934",
+              "inverse-primary": "#a8c8ff",
+              "on-tertiary-container": "#79d09a",
+              "on-primary-fixed": "#001b3c",
+              "tertiary": "#003f23",
+              "tertiary-fixed-dim": "#81d9a2",
+              "on-secondary-fixed-variant": "#5d4200",
+              "inverse-on-surface": "#f3f0ef",
+              "on-surface-variant": "#434653",
+              "surface-container": "#f0eded",
+              "on-tertiary-fixed": "#002110",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "secondary-fixed-dim": "#fbbc2b",
+              "surface-variant": "#e5e2e1",
+              "tertiary-fixed": "#9df5bd",
+              "surface-container-low": "#f6f3f2",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#004689",
+              "secondary-container": "#ffbf2e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#a8c8ff",
+              "on-secondary-fixed": "#261900",
+              "surface-bright": "#fcf9f8",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "primary": "#00366c",
+              "secondary-fixed": "#ffdea5",
+              "secondary": "#7b5800",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#c3c6d5",
+              "on-primary-container": "#9ac0ff",
+              "on-background": "#1b1b1c",
+              "surface": "#fcf9f8",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#6e4f00",
+              "inverse-surface": "#303030",
+              "primary-fixed": "#d5e3ff",
+              "outline": "#737784",
+              "surface-tint": "#175ead",
+              "surface-container-highest": "#e5e2e1",
+              "primary-container": "#004d95",
+              "on-tertiary-fixed-variant": "#00522f",
+              "on-surface": "#1b1b1c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #00366c 0%, #004d95 100%);
+        }
+        .glass-nav {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<header class="docked full-width top-0 sticky z-50 glass-nav shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="text-2xl font-black text-blue-900 tracking-tighter font-headline">EduBridge GH</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-4 py-16">
+<div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<section class="lg:col-span-5 space-y-8">
+<div class="inline-flex items-center gap-2 bg-secondary-container/20 text-on-secondary-container px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label text-xs font-bold uppercase tracking-wider">Onboarding • Step 2 of 3</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                    Set up your learning preferences
+                </h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-md">
+                    Customize your EduBridge experience. We use these details to curate Ghanaian academic resources specifically for your level.
+                </p>
+<div class="hidden lg:block pt-8">
+<div class="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl">
+<img alt="Academic Setup" class="w-full h-full object-cover" data-alt="cheerful Ghanaian students collaborating in a modern university library with warm sunlight streaming through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDicKLl7fvO5urKrFCn8eMz4US_4YRhhBCA4q-otBsW7cRoh5To0vFIEi0JRvuKipNvuvt4QSEzil2sGNBIlwZMss8veJyP3M1EgNrt--QeIFUaBYqaMTCqbD1nz7Zha5hwfoDWSeiUVRG3_HPgOLUGGK1ROxJkI7_MjZJgasUfsL29W7XDksSYuWYIbGhL73OF2KR5DASyPZqAgUA_-aDPtNzW4Leno-cRJ4oGQi2VgwjsV173TwWAd_1YNWBzf9IAGQUUlxJBBS6a"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<p class="font-headline font-bold text-xl leading-tight">Empowering students through localized intelligence.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-3xl shadow-[0px_12px_32px_rgba(27,27,28,0.06)] space-y-10">
+<div class="space-y-6">
+<label class="font-headline text-xl font-bold text-primary block">
+                            Preferred Language for Explanations
+                        </label>
+<div class="flex flex-wrap gap-3">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-label text-sm font-semibold flex items-center gap-2 transition-transform active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                English
+                            </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-3 rounded-full font-label text-sm font-semibold transition-colors active:scale-95">
+                                Twi
+                            </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-3 rounded-full font-label text-sm font-semibold transition-colors active:scale-95">
+                                Ewe
+                            </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-3 rounded-full font-label text-sm font-semibold transition-colors active:scale-95">
+                                Ga
+                            </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-3 rounded-full font-label text-sm font-semibold transition-colors active:scale-95">
+                                Fante
+                            </button>
+</div>
+</div>
+<div class="space-y-6">
+<label class="font-headline text-xl font-bold text-primary block">
+                            Current Academic Level
+                        </label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="academic_level" type="radio"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+<span class="font-bold text-on-surface">UG</span>
+<span class="text-xs text-on-surface-variant">Undergraduate</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="academic_level" type="radio"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-bold text-on-surface">Master's</span>
+<span class="text-xs text-on-surface-variant">Postgraduate</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="academic_level" type="radio"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="menu_book">menu_book</span>
+<span class="font-bold text-on-surface">PhD</span>
+<span class="text-xs text-on-surface-variant">Doctoral Research</span>
+</div>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-headline text-xl font-bold text-primary block" for="interests">
+                            Subject Interests
+                        </label>
+<div class="relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" id="interests" placeholder="e.g. Constitutional Law, Biochemistry, Economics..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="text-xs font-medium text-on-tertiary-fixed-variant bg-tertiary-fixed px-3 py-1 rounded-full">Sociology</span>
+<span class="text-xs font-medium text-on-tertiary-fixed-variant bg-tertiary-fixed px-3 py-1 rounded-full">Political Science</span>
+<span class="text-xs font-medium text-on-tertiary-fixed-variant bg-tertiary-fixed px-3 py-1 rounded-full">Business</span>
+</div>
+</div>
+<div class="pt-6 flex flex-col md:flex-row gap-4">
+<button class="bg-primary-gradient text-on-primary px-10 py-4 rounded-xl font-headline font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98] flex-grow text-center">
+                            Continue
+                        </button>
+<button class="bg-surface-container-high text-on-surface px-10 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-dim transition-all active:scale-[0.98] text-center">
+                            Skip for now
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="py-12 border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-surface-variant text-sm font-medium">© 2024 EduBridge GH. Supporting Ghanaian Academic Excellence.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

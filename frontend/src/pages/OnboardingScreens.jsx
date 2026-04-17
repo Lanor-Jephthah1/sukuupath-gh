@@ -45,10 +45,10 @@ const OnboardingScreens = () => {
       <main className="relative h-screen w-full flex flex-col overflow-hidden max-w-md mx-auto sm:max-w-none sm:mx-0 shadow-lg sm:shadow-none bg-surface-container-lowest">
         
         {/* Top Bar */}
-        <div className="absolute top-0 left-0 w-full z-10 px-6 py-6 flex justify-between items-center bg-transparent">
+        <div className="absolute top-0 left-0 w-full z-10 px-4 py-4 sm:px-6 sm:py-6 flex justify-between items-center bg-transparent">
             <div className="flex items-center gap-2 animate-fade-in-up">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-lg">S</div>
-            <span className="font-headline font-extrabold text-xl tracking-tighter text-primary">{APP_NAME}</span>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline font-extrabold text-base sm:text-lg">S</div>
+            <span className="font-headline font-extrabold text-lg sm:text-xl tracking-tighter text-primary">{APP_NAME}</span>
           </div>
           {currentStep < 3 && (
             <button 
@@ -64,7 +64,7 @@ const OnboardingScreens = () => {
         <div 
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex-1 overflow-x-auto snap-x snap-mandatory flex scroll-smooth pb-8"
+          className="flex-1 overflow-x-auto snap-x snap-mandatory flex scroll-smooth pb-4 sm:pb-8"
           style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
         >
           {/* Style for hiding raw webkit scrollbar */}
@@ -75,8 +75,8 @@ const OnboardingScreens = () => {
           `}</style>
           
           {/* Section 1 */}
-          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-6 py-12">
-            <div className={`w-full max-w-[320px] aspect-square mb-8 relative transition-all duration-700 transform ${currentStep === 0 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
+          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12">
+            <div className={`w-full max-w-[250px] sm:max-w-[320px] aspect-square mb-5 sm:mb-8 relative transition-all duration-700 transform ${currentStep === 0 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
               <div className="absolute inset-0 bg-secondary-container/20 rounded-full blur-3xl animate-pulse-slow"></div>
               <div className="relative w-full h-full flex items-center justify-center p-6 bg-surface-container shadow-sm overflow-hidden rounded-full">
                 <img 
@@ -86,15 +86,15 @@ const OnboardingScreens = () => {
                 />
               </div>
             </div>
-            <div className={`text-center max-w-sm px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 0 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <h2 className="font-headline text-3xl font-extrabold text-primary mb-3 leading-tight tracking-tight">Learn in your Mother Tongue.</h2>
-              <p className="text-on-surface-variant text-base leading-relaxed">Bridge the gap between languages. Seamlessly translate complex academic content into Twi, Ewe, Ga, or Fante.</p>
+            <div className={`text-center max-w-sm px-3 sm:px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 0 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+              <h2 className="font-headline text-[1.75rem] sm:text-3xl font-extrabold text-primary mb-2 sm:mb-3 leading-tight tracking-tight">Learn in your Mother Tongue.</h2>
+              <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">Bridge the gap between languages. Seamlessly translate complex academic content into Twi, Ewe, Ga, or Fante.</p>
             </div>
           </section>
 
           {/* Section 2 */}
-          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-6 py-12">
-            <div className={`w-full max-w-[320px] aspect-square mb-8 relative transition-all duration-700 transform ${currentStep === 1 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
+          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12">
+            <div className={`w-full max-w-[250px] sm:max-w-[320px] aspect-square mb-5 sm:mb-8 relative transition-all duration-700 transform ${currentStep === 1 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
               <div className="absolute inset-0 bg-tertiary-container/20 rounded-full blur-3xl animate-pulse-slow"></div>
               <div className="relative w-full h-full flex items-center justify-center p-6 bg-surface-container rounded-full shadow-sm overflow-hidden">
                 <div className="grid grid-cols-2 gap-4 w-full h-full p-4">
@@ -117,15 +117,15 @@ const OnboardingScreens = () => {
                 </div>
               </div>
             </div>
-            <div className={`text-center max-w-sm px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 1 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <h2 className="font-headline text-3xl font-extrabold text-primary mb-3 leading-tight tracking-tight">Complex, Simplified.</h2>
-              <p className="text-on-surface-variant text-base leading-relaxed">Summarize dense chapters, simplify academic jargon, and get instant explanations for tough assignment questions.</p>
+            <div className={`text-center max-w-sm px-3 sm:px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 1 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+              <h2 className="font-headline text-[1.75rem] sm:text-3xl font-extrabold text-primary mb-2 sm:mb-3 leading-tight tracking-tight">Complex, Simplified.</h2>
+              <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">Summarize dense chapters, simplify academic jargon, and get instant explanations for tough assignment questions.</p>
             </div>
           </section>
 
           {/* Section 3 - New Screen */}
-          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-6 py-12">
-            <div className={`w-full max-w-[320px] aspect-square mb-8 relative transition-all duration-700 transform ${currentStep === 2 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
+          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12">
+            <div className={`w-full max-w-[250px] sm:max-w-[320px] aspect-square mb-5 sm:mb-8 relative transition-all duration-700 transform ${currentStep === 2 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
               <div className="absolute inset-0 bg-info/20 rounded-full blur-3xl animate-pulse-slow"></div>
               <div className="relative w-full h-full flex flex-col items-center justify-center p-8 bg-surface-container rounded-full shadow-sm overflow-hidden">
                 <span className="material-symbols-outlined text-6xl text-sky-500 mb-4 animate-float">quick_reference_all</span>
@@ -143,15 +143,15 @@ const OnboardingScreens = () => {
                 </div>
               </div>
             </div>
-            <div className={`text-center max-w-sm px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 2 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <h2 className="font-headline text-3xl font-extrabold text-sky-600 mb-3 leading-tight tracking-tight">Chat with your Notes.</h2>
-              <p className="text-on-surface-variant text-base leading-relaxed">Upload PDFs, slides, or documents and ask questions directly. Study smarter with AI tailored to your curriculum.</p>
+            <div className={`text-center max-w-sm px-3 sm:px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 2 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+              <h2 className="font-headline text-[1.75rem] sm:text-3xl font-extrabold text-sky-600 mb-2 sm:mb-3 leading-tight tracking-tight">Chat with your Notes.</h2>
+              <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">Upload PDFs, slides, or documents and ask questions directly. Study smarter with AI tailored to your curriculum.</p>
             </div>
           </section>
 
           {/* Section 4 — Premium Illustration */}
-          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-6 py-12">
-            <div className={`w-full max-w-[320px] aspect-square mb-8 relative transition-all duration-700 transform ${currentStep === 3 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
+          <section className="min-w-full h-full snap-start flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12">
+            <div className={`w-full max-w-[250px] sm:max-w-[320px] aspect-square mb-5 sm:mb-8 relative transition-all duration-700 transform ${currentStep === 3 ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'}`}>
               <div className="absolute inset-0 bg-primary/15 rounded-full blur-3xl animate-pulse-slow"></div>
               {/* Card-based illustration */}
               <div className="relative w-full h-full flex flex-col items-center justify-center gap-3 p-6 bg-gradient-to-br from-[#00366c] to-[#004d95] rounded-[32px] shadow-2xl overflow-hidden">
@@ -214,17 +214,17 @@ const OnboardingScreens = () => {
                 </div>
               </div>
             </div>
-            <div className={`text-center max-w-sm px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 3 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <h2 className="font-headline text-3xl font-extrabold text-primary mb-3 leading-tight tracking-tight">Success starts here.</h2>
-              <p className="text-on-surface-variant text-base leading-relaxed">Master your courses with AI-powered quizzes, personalized study notes, and tools designed for student success.</p>
+            <div className={`text-center max-w-sm px-3 sm:px-4 transition-all duration-[800ms] delay-200 transform ${currentStep === 3 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+              <h2 className="font-headline text-[1.75rem] sm:text-3xl font-extrabold text-primary mb-2 sm:mb-3 leading-tight tracking-tight">Success starts here.</h2>
+              <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">Master your courses with AI-powered quizzes, personalized study notes, and tools designed for student success.</p>
             </div>
           </section>
 
         </div>
 
         {/* Footer Area */}
-        <footer className="px-6 py-6 pb-12 bg-white/80 backdrop-blur-md rounded-t-[32px] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)] border-t border-slate-100 z-10 w-full max-w-md mx-auto sm:max-w-none">
-          <div className="flex justify-center gap-2 mb-6">
+        <footer className="px-4 py-4 pb-6 sm:px-6 sm:py-6 sm:pb-12 bg-white/80 backdrop-blur-md rounded-t-[32px] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)] border-t border-slate-100 z-10 w-full max-w-md mx-auto sm:max-w-none">
+          <div className="flex justify-center gap-2 mb-4 sm:mb-6">
             {[0, 1, 2, 3].map((step) => (
               <div 
                 key={step} 
@@ -239,7 +239,7 @@ const OnboardingScreens = () => {
             <div className="flex flex-col items-center">
               <button 
                 onClick={handleNext}
-                className="w-full sm:w-[80%] max-w-[320px] py-3.5 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2"
+                className="w-full sm:w-[80%] max-w-[320px] py-3 sm:py-3.5 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2"
               >
                 CONTINUE <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
@@ -248,13 +248,13 @@ const OnboardingScreens = () => {
             <div className="flex flex-col gap-3 items-center">
               <button 
                 onClick={() => handleNavigate('/signup')}
-                className="w-full sm:w-[80%] max-w-[320px] py-3.5 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+                className="w-full sm:w-[80%] max-w-[320px] py-3 sm:py-3.5 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-transform"
               >
                 CREATE ACCOUNT
               </button>
               <button 
                 onClick={() => handleNavigate('/login')}
-                className="w-full sm:w-[80%] max-w-[320px] py-3.5 bg-surface-container-high text-on-surface font-headline font-bold rounded-2xl active:scale-95 transition-transform hover:bg-surface-container-highest"
+                className="w-full sm:w-[80%] max-w-[320px] py-3 sm:py-3.5 bg-surface-container-high text-on-surface font-headline font-bold rounded-2xl active:scale-95 transition-transform hover:bg-surface-container-highest"
               >
                 SIGN IN
               </button>

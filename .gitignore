@@ -1,5 +1,7 @@
 .venv/
 .venv-train/
+__pycache__/
+*.pyc
 backend/.env
 backend/.env.*
 backend/.venv-backend/

@@ -544,7 +544,13 @@ async def ai_extract(file: UploadFile = File(...)):
         contents = await file.read()
         filename = file.filename.lower()
         if filename.endswith(".pdf"):
-            import fitz  # PyMuPDF
+            try:
+                import fitz  # PyMuPDF
+            except ImportError as exc:
+                raise HTTPException(
+                    status_code=503,
+                    detail="PDF extraction is not enabled in this deployment."
+                ) from exc
             pdf = fitz.open(stream=contents, filetype="pdf")
             for page in pdf:
                 text += page.get_text() + "\n"
@@ -565,6 +571,8 @@ async def ai_extract(file: UploadFile = File(...)):
     except Exception as e:
         import traceback
         traceback.print_exc()
+        if isinstance(e, HTTPException):
+            raise
         raise HTTPException(status_code=400, detail=f"Document Parsing Engine Error: {str(e)}")
     
     return {"text": text.strip()}

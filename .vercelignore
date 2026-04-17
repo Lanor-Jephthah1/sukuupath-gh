@@ -4,8 +4,15 @@ stitch
 frontend/node_modules
 frontend/dist
 frontend/build_output.txt
+api/__pycache__
+backend/.venv-backend
 backend/__pycache__
 backend/.env
+backend/uploads
+backend/firebase_credentials.json
+backend/*.db
+backend/test_*.py
+backend/dummy.pdf
 *.env
 backend/edubridge.db
 *.log

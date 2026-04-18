@@ -9,11 +9,6 @@
 </p>
 
 <p align="center">
-  <a href="https://sukuupath-gh.vercel.app/"><img src="https://img.shields.io/badge/Live%20System-sukuupath--gh.vercel.app-0f172a?style=for-the-badge&logo=vercel" alt="Live system" /></a>
-  <a href="https://github.com/Lanor-Jephthah1/sukuupath-gh"><img src="https://img.shields.io/badge/GitHub-Lanor--Jephthah1%2Fsukuupath--gh-111827?style=for-the-badge&logo=github" alt="GitHub repository" /></a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-0f172a?style=for-the-badge&logo=react" alt="Frontend" />
   <img src="https://img.shields.io/badge/Backend-FastAPI-0f766e?style=for-the-badge&logo=fastapi" alt="Backend" />
   <img src="https://img.shields.io/badge/Auth-Firebase-f59e0b?style=for-the-badge&logo=firebase" alt="Firebase" />

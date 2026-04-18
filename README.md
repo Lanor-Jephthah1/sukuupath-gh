@@ -83,17 +83,22 @@ This project is especially valuable in contexts where:
 
 ## System Architecture
 
-```mermaid
-flowchart LR
-    A[React + Vite Frontend] --> B[/api/* on FastAPI]
-    B --> C[Khaya Translation API]
-    B --> D[NextToken LLM Gateway]
-    B --> E[Hugging Face Translation Models]
-    B --> F[Firebase Realtime Database]
-    B --> G[Firebase Auth Client + Admin Credentials]
-    B --> H[SQLAlchemy Runtime Database Layer]
-    I[Vercel Static Hosting] --> A
-    J[Vercel Python Runtime] --> B
+```text
+Vercel Static Hosting
+        |
+        v
+React + Vite Frontend
+        |
+        |  /api/*
+        v
+FastAPI Backend on Vercel Python Runtime
+        |
+        |-- Khaya Translation API
+        |-- NextToken LLM Gateway
+        |-- Hugging Face Translation Models
+        |-- Firebase Realtime Database
+        |-- Firebase Auth + Admin Credentials
+        |-- SQLAlchemy Runtime Database Layer
 ```
 
 ### Frontend Layer

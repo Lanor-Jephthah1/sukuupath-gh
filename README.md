@@ -29,7 +29,15 @@
 **Production URL:** `https://sukuupath-gh.vercel.app/`
 
 <p align="center">
-  <img src="./frontend/public/sukuupath-og.jpg" alt="SukuuPath demo preview" width="900" />
+  <a href="./assets/readme/translation-demo.webp">
+    <img src="./assets/readme/translation-demo.webp" alt="SukuuPath translation demo preview" width="900" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="./assets/readme/translation-demo.webp"><strong>Open the recorded translation demo</strong></a>
+  &nbsp;|&nbsp;
+  <a href="https://sukuupath-gh.vercel.app/"><strong>Launch the live platform</strong></a>
 </p>
 
 ### Demo Focus For Presentation

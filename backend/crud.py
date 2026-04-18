@@ -34,7 +34,7 @@ def create_user(db, user: schemas.UserCreate):
         "first_name": user.first_name,
         "middle_name": user.middle_name,
         "last_name": user.last_name,
-        "role": user.role or "student",
+        "role": "student",
         "school": user.school,
         "level": user.level,
         "terms_accepted": user.terms,

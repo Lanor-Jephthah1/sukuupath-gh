@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=26&pause=1100&color=0F766E&center=true&vCenter=true&width=980&lines=Translate+academic+content+into+Ghanaian+languages;Generate+quizzes%2C+summaries%2C+and+study+notes;Chat+with+documents+using+AI-assisted+extraction;Support+students%2C+lecturers%2C+and+responsible+AI+feedback" alt="Typing intro" />
+  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=26&pause=1100&color=0F766E&center=true&vCenter=true&width=980&lines=Translate+academic+content+into+Ghanaian+languages;Generate+quizzes%2C+summaries%2C+and+study+notes;Chat+with+documents+using+AI-assisted+extraction;Support+students+with+responsible+AI+learning+tools" alt="Typing intro" />
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 <p align="center">
   SukuuPath GH is a full-stack academic intelligence platform designed for Ghanaian tertiary education.
-  It helps students and lecturers translate learning materials, simplify difficult concepts, generate quizzes,
+  It helps students translate learning materials, simplify difficult concepts, generate quizzes,
   summarize course content, upload resources, and interact with documents through a unified AI experience.
 </p>
 
@@ -42,7 +42,7 @@
 - Multi-tool academic assistant tailored to Ghanaian higher education workflows.
 - English-to-local-language translation experience powered by the Ghana NLP Khaya API.
 - AI summarization, quiz generation, simplification, and document chat in one product surface.
-- Lecturer-facing material management plus feedback and audit visibility.
+- Resource management plus feedback and audit visibility.
 - Public production deployment with a full frontend and backend on a single domain.
 
 ---
@@ -55,7 +55,7 @@ This project is especially valuable in contexts where:
 
 - students need clearer explanations of technical material
 - local-language support improves comprehension and confidence
-- lecturers need digital distribution and review workflows
+- students need a dependable workflow for saving, revisiting, and studying academic materials
 - educational AI must remain observable, reviewable, and usable in real study scenarios
 
 ---
@@ -73,10 +73,9 @@ This project is especially valuable in contexts where:
 - `Library` for saved outputs and study artifacts.
 - `Dashboard` for usage activity, insights, and recent academic actions.
 
-### Lecturer And Oversight Experience
+### Resource And Oversight Experience
 
 - `Material Uploads` for PDFs, DOCX, PPTX, and related teaching materials.
-- `Lecturer Dashboard` for resource management and quick monitoring.
 - `Feedback Pipeline` for collecting trust and quality signals on AI outputs.
 - `Audit Dashboard` for reviewing recent feedback, quality categories, and resolution flow.
 
@@ -100,7 +99,7 @@ flowchart LR
 ### Frontend Layer
 
 - Built with React and Vite.
-- Handles onboarding, authentication flows, dashboards, translation workspace, quiz generation, summaries, library management, and lecturer tools.
+- Handles onboarding, authentication flows, dashboards, translation workspace, quiz generation, summaries, library management, and student study tools.
 - Uses Firebase client configuration for sign-in flows and browser-side auth interactions.
 - Communicates with the backend through `/api/*` routes on the same deployment domain.
 
@@ -112,7 +111,7 @@ flowchart LR
 
 ### Data Layer
 
-- Firebase Realtime Database stores users, study items, lecturer materials, and feedback streams.
+- Firebase Realtime Database stores users, study items, uploaded materials, and feedback streams.
 - Firebase Admin credentials are loaded securely through `FIREBASE_SERVICE_ACCOUNT_JSON` in production.
 - SQLAlchemy is configured for SQLite fallback or hosted `DATABASE_URL` support where structured persistence is needed.
 
@@ -199,7 +198,7 @@ This allows SukuuPath GH to treat documents as AI-ready study inputs rather than
 - The backend sync path stores study items in Firebase Realtime Database.
 - The dashboard reads these artifacts to compute activity, recent history, and study metrics.
 
-### Lecturer Materials
+### Uploaded Materials
 
 - Uploaded teaching resources are stored with metadata including title, original filename, type, size, and creation timestamp.
 - Materials can later support translation, review, and downstream study workflows.

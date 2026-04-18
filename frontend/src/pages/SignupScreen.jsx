@@ -15,7 +15,6 @@ const SignupScreen = () => {
     email: googleData?.email || '',
     school: '',
     level: '',
-    role: 'student',
     password: '',
     confirmPassword: '',
     terms: false
@@ -61,10 +60,6 @@ const SignupScreen = () => {
     if (errors[id || e.target.name]) {
       setErrors(prev => ({ ...prev, [id || e.target.name]: null }));
     }
-  };
-
-  const handleRoleChange = (e) => {
-    setFormData(prev => ({ ...prev, role: e.target.value }));
   };
 
   const handleGoogleSignIn = async () => {
@@ -123,7 +118,7 @@ const SignupScreen = () => {
       if (data.school === 'TBD') {
         navigate('/profile-setup');
       } else {
-        navigate(data.role === 'admin' ? '/admin-dashboard' : data.role === 'lecturer' ? '/lecturer-dashboard' : '/student-dashboard');
+        navigate('/student-dashboard');
       }
     } catch (err) {
       setIsSubmitting(false);
@@ -146,7 +141,6 @@ const SignupScreen = () => {
         school: formData.school,
         level: formData.level,
         password: formData.password,
-        role: formData.role,
         terms: formData.terms || true
       };
 
@@ -182,9 +176,7 @@ const SignupScreen = () => {
         setShowWaitingOverlay(true);
         
         setTimeout(() => {
-          if(formData.role === 'admin') navigate('/admin-dashboard');
-          else if(formData.role === 'lecturer') navigate('/lecturer-dashboard');
-          else navigate('/dashboard'); // Use /dashboard instead of student-dashboard for now
+          navigate('/dashboard');
         }, 3000);
       }, 2500);
 
@@ -209,7 +201,7 @@ const SignupScreen = () => {
             
             <div className="text-center space-y-3">
               <h2 className="text-2xl font-black text-primary font-headline animate-pulse">Building your academic space...</h2>
-              <p className="text-on-surface-variant font-medium">Gathering optimal AI tools for a {formData.role} profile.</p>
+              <p className="text-on-surface-variant font-medium">Gathering optimal AI tools for your student profile.</p>
             </div>
 
             <div className="mt-8 flex gap-2">
@@ -282,7 +274,7 @@ const SignupScreen = () => {
           <div className="w-full max-w-md">
             <header className="mb-8">
               <h1 className="font-headline text-3xl font-extrabold text-primary tracking-tight mb-2">Create your SukuuPath GH account</h1>
-              <p className="text-on-surface-variant">Join thousands of students and educators across Ghana today.</p>
+              <p className="text-on-surface-variant">Join thousands of students across Ghana today.</p>
             </header>
             
             <form className="space-y-4" onSubmit={handleSubmit}>
@@ -315,25 +307,6 @@ const SignupScreen = () => {
                 <label className="font-label text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1" htmlFor="email">Email address</label>
                 <input value={formData.email} onChange={handleChange} className={`w-full px-4 py-3 rounded-lg bg-surface-container-lowest border-0 ring-1 ${errors.email ? 'ring-error focus:ring-error' : 'ring-outline-variant/20 focus:ring-primary'} focus:ring-2 text-sm text-on-surface transition-all`} id="email" placeholder="kwame@university.edu.gh" type="email" />
                 {errors.email && <p className="text-[10px] text-error px-1 font-bold animate-pulse">{errors.email}</p>}
-              </div>
-
-              {/* Role Selector */}
-              <div className="space-y-2 pt-1 relative">
-                <span className="font-label text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1 block">Account Level</span>
-                <div className="flex flex-wrap gap-2">
-                  <label className="cursor-pointer flex-1">
-                    <input checked={formData.role === 'student'} onChange={handleRoleChange} className="sr-only peer" name="role" type="radio" value="student" />
-                    <div className="px-3 py-2 text-center rounded-lg bg-surface-container text-on-surface-variant font-medium text-xs peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-all hover:bg-surface-container-high border-2 border-transparent peer-checked:border-secondary-container">Student</div>
-                  </label>
-                  <label className="cursor-pointer flex-1">
-                    <input checked={formData.role === 'lecturer'} onChange={handleRoleChange} className="sr-only peer" name="role" type="radio" value="lecturer" />
-                    <div className="px-3 py-2 text-center rounded-lg bg-surface-container text-on-surface-variant font-medium text-xs peer-checked:bg-primary/20 peer-checked:text-primary transition-all hover:bg-surface-container-high border-2 border-transparent peer-checked:border-primary">Lecturer</div>
-                  </label>
-                  <label className="cursor-pointer flex-1">
-                    <input checked={formData.role === 'admin'} onChange={handleRoleChange} className="sr-only peer" name="role" type="radio" value="admin" />
-                    <div className="px-3 py-2 text-center rounded-lg bg-surface-container text-on-surface-variant font-medium text-xs peer-checked:bg-tertiary/20 peer-checked:text-tertiary transition-all hover:bg-surface-container-high border-2 border-transparent peer-checked:border-tertiary">Admin</div>
-                  </label>
-                </div>
               </div>
 
               {/* Education Details Grid */}

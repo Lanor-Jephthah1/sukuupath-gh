@@ -10,7 +10,6 @@ const StudentLayout = ({ children, hideSidebar = false }) => {
   
   const [userName, setUserName] = useState('Kofi Mensah');
   const [userProfile, setUserProfile] = useState({ school: 'UG', level: '300' });
-  const [userRole, setUserRole] = useState('student');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const StudentLayout = ({ children, hideSidebar = false }) => {
       const acc = JSON.parse(stored);
       setUserName(`${acc.first_name || acc.firstName || ''} ${acc.last_name || acc.lastName || ''}`);
       setUserProfile({ school: acc.school || 'UG', level: acc.level || '300' });
-      setUserRole(acc.role || 'student');
     }
   }, []);
 
@@ -33,9 +31,6 @@ const StudentLayout = ({ children, hideSidebar = false }) => {
     { name: 'Ask AI', path: '/ai-chat', icon: 'psychology', fill: true },
     { name: 'Quizzes', path: '/quiz', icon: 'quiz' },
     { name: 'Library', path: '/library', icon: 'menu_book' },
-    ...(userRole === 'admin' || userRole === 'lecturer'
-      ? [{ name: 'AI Audit', path: '/audit', icon: 'policy', fill: true }]
-      : []),
   ];
 
   return (

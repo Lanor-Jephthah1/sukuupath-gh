@@ -53,7 +53,7 @@ const SigninScreen = () => {
       if (remember) localStorage.setItem('keepSignedIn', 'true');
       else localStorage.removeItem('keepSignedIn');
       
-      navigate(data.role === 'admin' ? '/admin-dashboard' : data.role === 'lecturer' ? '/lecturer-dashboard' : '/student-dashboard');
+      navigate('/student-dashboard');
     } catch (err) {
       setIsSubmitting(false);
       setError(
@@ -116,7 +116,7 @@ const SigninScreen = () => {
       if (data.school === 'TBD') {
         navigate('/profile-setup');
       } else {
-        navigate(data.role === 'admin' ? '/admin-dashboard' : data.role === 'lecturer' ? '/lecturer-dashboard' : '/student-dashboard');
+        navigate('/student-dashboard');
       }
     } catch (err) {
       setIsSubmitting(false);
@@ -256,7 +256,7 @@ const SigninScreen = () => {
                 <span className="material-symbols-outlined text-[18px]">groups</span>
               </div>
               <p className="text-[11px] font-medium text-on-surface-variant leading-tight">
-                Authorized access only for <span className="text-on-surface font-bold">Students</span>, <span className="text-on-surface font-bold">Lecturers</span>, and <span className="text-on-surface font-bold">University Admins</span>.
+                Authorized access for <span className="text-on-surface font-bold">Students</span> using their SukuuPath academic workspace.
               </p>
             </div>
           </footer>
